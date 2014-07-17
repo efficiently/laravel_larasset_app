@@ -2,6 +2,13 @@
 
 class BaseController extends Controller {
 
+	use Efficiently\JqueryLaravel\ControllerAdditions;
+    
+	/**
+	 * The layout that should be used for responses.
+	 */
+	protected $layout = 'layouts.application';
+    
 	/**
 	 * Setup the layout used by the controller.
 	 *
