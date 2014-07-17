@@ -1,5 +1,5 @@
-Init Laravel with Larasset package demo application
-===================================================
+Init Laravel with Larasset demo application
+===========================================
 
 1. Get a copy of this demo on your computer
 
@@ -24,7 +24,7 @@ Init Laravel with Larasset package demo application
 3. Install the Node.js module of this package
 
   ```sh
-  npm install vendor/efficiently/larasset
+  npm install -g vendor/efficiently/larasset
   ```
 
 6. Run your Laravel application and the assets servers
