@@ -34,23 +34,23 @@ class MessagesController extends \BaseController {
 	public function store()
 	{
 		$message = \App::make('Message');
-		$message->fill(\Input::all());
+		$message->fill(\Input::except('_method', '_token'));
 
 		if ($message->save()) {
 			$format = \Request::format();
 
 			switch ($format) {
-			case 'html':
-				// No js fallback
-				$render = \Redirect::route('messages.show', $message->id);
-				break;
-			case 'js' :
-				// Just renders messages/store_js.blade.php
-				$render = $this->render(['js' => 'messages.store'], ['message' => $message]);
-				break;
-			default:
-				$render = \Redirect::route('home')->with('message', "Error: Unknown request");
-				break;
+				case 'html':
+					// No js fallback
+					$render = \Redirect::route('messages.show', $message->id);
+					break;
+				case 'js':
+					// Just renders messages/store_js.blade.php
+					$render = $this->render(['js' => 'messages.store'], ['message' => $message]);
+					break;
+				default:
+					$render = \Redirect::route('home')->with('message', "Error: Unknown request");
+					break;
 			}
 
 			return $render;
