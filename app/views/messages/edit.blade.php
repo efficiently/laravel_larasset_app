@@ -1,4 +1,4 @@
 @section('content')
-    <h2>Add a message</h2>
+    <h2>Edit this message</h2>
     @include('messages._form')
 @stop

@@ -7,7 +7,5 @@
         @endforeach
     </div>
 
-    <h2>Add a message</h2>
-    <?php $message = App::make('Message'); ?>
-    @include('messages/_form')
+    {{ link_to(route('messages.create'), 'Add a message', ['id' => 'new_link', 'data-remote' => true]) }}
 @stop

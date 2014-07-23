@@ -22,7 +22,21 @@ class MessagesController extends \BaseController {
 	 */
 	public function create()
 	{
-		return $this->render('messages.create');
+		$message = \App::make('Message');
+		$format = \Request::format();
+
+		switch ($format) {
+			case 'js':
+				$render = $this->render(['js' => 'messages.create'], compact('message'));
+				break;
+			case 'html':
+			default:
+				// No js fallback
+				$render = $this->render('messages.create', compact('message'));
+				break;
+		}
+
+		return $render;
 	}
 
 
@@ -80,7 +94,22 @@ class MessagesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$message = Message::findOrFail($id);
+		
+		$format = \Request::format();
+
+		switch ($format) {
+			case 'js':
+				$render = $this->render(['js' => 'messages.edit'], compact('message'));
+				break;
+			case 'html':
+			default:
+				// No js fallback
+				$render = $this->render('messages.edit', compact('message'));
+				break;
+		}
+
+		return $render;
 	}
 
 
@@ -92,7 +121,28 @@ class MessagesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$message = Message::findOrFail($id);
+		$message->fill(\Input::except('_method', '_token'));
+
+		if ($message->save()) {
+			$format = \Request::format();
+
+			switch ($format) {
+				case 'js':
+					// Just renders messages/update_js.blade.php
+					$render = $this->render(['js' => 'messages.update'], ['message' => $message]);
+					break;
+				case 'html':
+				default:
+					// No js fallback
+					$render = \Redirect::route('messages.show', $message->id);
+					break;
+			}
+
+			return $render;
+		}
+
+		return \Redirect::route('home')->with('message', "Error: Unable to save this message");
 	}
 
 
@@ -104,6 +154,26 @@ class MessagesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$message = Message::findOrFail($id);
+		
+		if ($message->delete()) {		
+			$format = \Request::format();
+
+			switch ($format) {
+				case 'js':
+					// Just renders messages/destroy_js.blade.php
+					$render = $this->render(['js' => 'messages.destroy'], compact('message'));
+					break;
+				case 'html':
+				default:
+					// No js fallback
+					$render = \Redirect::route('messages.index');
+					break;
+			}
+
+			return $render;
+		}
+
+		return \Redirect::route('home')->with('message', "Error: Unable to delete this message");
 	}
 }
