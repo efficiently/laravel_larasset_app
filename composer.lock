@@ -92,12 +92,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/efficiently/jquery-laravel.git",
-                "reference": "1b4b6c4f93990bc033de06a9ecc1c60f2d0d06d6"
+                "reference": "dc59da424d1e955761cf50fa992eeebe45e91a3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efficiently/jquery-laravel/zipball/1b4b6c4f93990bc033de06a9ecc1c60f2d0d06d6",
-                "reference": "1b4b6c4f93990bc033de06a9ecc1c60f2d0d06d6",
+                "url": "https://api.github.com/repos/efficiently/jquery-laravel/zipball/dc59da424d1e955761cf50fa992eeebe45e91a3b",
+                "reference": "dc59da424d1e955761cf50fa992eeebe45e91a3b",
                 "shasum": ""
             },
             "require": {
@@ -136,7 +136,7 @@
                 "ujs",
                 "unobtrusive"
             ],
-            "time": "2014-07-21 13:37:37"
+            "time": "2014-07-23 14:05:46"
         },
         {
             "name": "efficiently/larasset",
@@ -144,12 +144,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/efficiently/larasset.git",
-                "reference": "4c75c35ef5fa1308ebee3280b6323f7c876f49f5"
+                "reference": "17661ce6d29890f55a7685f91b3b9ea19dc68ac7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efficiently/larasset/zipball/4c75c35ef5fa1308ebee3280b6323f7c876f49f5",
-                "reference": "4c75c35ef5fa1308ebee3280b6323f7c876f49f5",
+                "url": "https://api.github.com/repos/efficiently/larasset/zipball/17661ce6d29890f55a7685f91b3b9ea19dc68ac7",
+                "reference": "17661ce6d29890f55a7685f91b3b9ea19dc68ac7",
                 "shasum": ""
             },
             "require": {
@@ -203,7 +203,7 @@
                 "sourcemaps",
                 "versioning"
             ],
-            "time": "2014-07-21 13:29:44"
+            "time": "2014-07-23 08:38:03"
         },
         {
             "name": "filp/whoops",
@@ -352,16 +352,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v4.2.6",
+            "version": "v4.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2e73cd58ee42919166a51897b965e1135b85048c"
+                "reference": "11c1b47b365be02beab3e5aca2306aaa08203d8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2e73cd58ee42919166a51897b965e1135b85048c",
-                "reference": "2e73cd58ee42919166a51897b965e1135b85048c",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/11c1b47b365be02beab3e5aca2306aaa08203d8e",
+                "reference": "11c1b47b365be02beab3e5aca2306aaa08203d8e",
                 "shasum": ""
             },
             "require": {
@@ -455,9 +455,7 @@
             "authors": [
                 {
                     "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com",
-                    "homepage": "https://github.com/taylorotwell",
-                    "role": "Creator of Laravel"
+                    "email": "taylorotwell@gmail.com"
                 }
             ],
             "description": "The Laravel Framework.",
@@ -465,7 +463,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-06-29 00:16:51"
+            "time": "2014-07-22 20:25:45"
         },
         {
             "name": "monolog/monolog",
