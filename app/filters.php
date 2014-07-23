@@ -19,7 +19,7 @@ App::before(function($request)
 
 App::after(function($request, $response)
 {
-	//
+	Event::fire('cors', [$request, $response]);
 });
 
 /*
@@ -81,10 +81,68 @@ Route::filter('guest', function()
 |
 */
 
-Route::filter('csrf', function()
-{
-	if (Session::token() != Input::get('_token'))
-	{
+Route::filter('csrf', function($route, $request) {
+	
+	/*
+	| Raises an exception if a request isn't verified. Checks:
+	|
+	| * is it a GET or HEAD request? Gets should be safe and idempotent
+	| * Does the Session CSRF token match the given token value from the input '_token' ?
+	| * Does the X-CSRF-Token header match the Session CSRF token
+	|
+	*/
+ 
+	if (
+		$request->isMethod('get') || $request->isMethod('head') ||
+		Session::token() == Input::get('_token') || Session::token() == $request->header('X-CSRF-Token')
+	) {
+		// do nothing
+	} else {
+		// Choose one of this three settings:
+		
+		/*
+		| Provides an empty session during request but doesn't reset it completely. You should use it as default
+		*/
+		// Session::flush();
+		
+		/*
+		| Resets the session. Useful for API.
+		*/
+		// Session::flush();
+		// Session::regenerate(true);
+		
+		/*
+		| Raises Exception. Laravel default setting
+		*/
 		throw new Illuminate\Session\TokenMismatchException;
+	}
+});
+
+/*
+| Verify that we aren't serving an unauthorized cross-origin JavaScript response.
+|
+| GET requests are not protected since they don't have side effects like writing
+| to the database and don't leak sensitive information. JavaScript requests are
+| an exception: a third-party site can use a <script> tag to reference a JavaScript
+| URL on your site. When your JavaScript response loads on their site, it executes.
+| With carefully crafted JavaScript on their end, sensitive data in your JavaScript
+| response may be extracted. To prevent this, only XmlHttpRequest (known as XHR or
+| Ajax) requests are allowed to make GET requests for JavaScript responses.
+|
+*/
+
+Event::listen('cors', function($request, $response) {
+	if (
+		$request->isMethod('get') &&
+		$request->getFormat($response->headers->get('Content-Type')) == 'js' &&
+		! $request->ajax()
+	) {
+		$cross_origin_javascript_warning = "Security warning: an embedded " .
+			"<script> tag on another site requested protected JavaScript. " .
+			"If you know what you're doing, go ahead and disable CSRF " .
+			"protection on this action to permit cross-origin JavaScript embedding.";
+		
+		Log::warning($cross_origin_javascript_warning);		
+		throw new \Exception($cross_origin_javascript_warning);
 	}
 });
