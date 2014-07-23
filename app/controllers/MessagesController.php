@@ -40,23 +40,21 @@ class MessagesController extends \BaseController {
 			$format = \Request::format();
 
 			switch ($format) {
-				case 'html':
-					// No js fallback
-					$render = \Redirect::route('messages.show', $message->id);
-					break;
 				case 'js':
 					// Just renders messages/store_js.blade.php
 					$render = $this->render(['js' => 'messages.store'], ['message' => $message]);
 					break;
+				case 'html':
 				default:
-					$render = \Redirect::route('home')->with('message', "Error: Unknown request");
+					// No js fallback
+					$render = \Redirect::route('messages.show', $message->id);
 					break;
 			}
 
 			return $render;
 		}
 
-		return \Redirect::route('home')->with('message', "Error: Unable to save the message");
+		return \Redirect::route('home')->with('message', "Error: Unable to save this message");
 	}
 
 

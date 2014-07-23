@@ -1,4 +1,4 @@
-{{ form_for($message, ['route' => 'messages.store', 'data-remote' => true]) }}   
+{{ form_for($message, ['data-remote' => true]) }}   
     <div class="field">
         {{ Form::label('title') }}
         {{ Form::text('title') }}
