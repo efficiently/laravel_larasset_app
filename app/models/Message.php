@@ -1,7 +1,6 @@
 <?php
 
-class Message extends \Eloquent
+class Message extends Eloquent
 {
     protected $fillable = ['title', 'body'];
-    
 }

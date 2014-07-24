@@ -1,179 +1,180 @@
 <?php
 
-class MessagesController extends \BaseController {
+class MessagesController extends BaseController
+{
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		$messages = Message::all();
-		
-		return $this->render('messages.index', compact('messages'));
-	}
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        $messages = Message::all();
 
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		$message = \App::make('Message');
-		$format = \Request::format();
-
-		switch ($format) {
-			case 'js':
-				$render = $this->render(['js' => 'messages.create'], compact('message'));
-				break;
-			case 'html':
-			default:
-				// No js fallback
-				$render = $this->render('messages.create', compact('message'));
-				break;
-		}
-
-		return $render;
-	}
+        return $this->render('messages.index', compact('messages'));
+    }
 
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		$message = \App::make('Message');
-		$message->fill(\Input::except('_method', '_token'));
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        $message = \App::make('Message');
+        $format = \Request::format();
 
-		if ($message->save()) {
-			$format = \Request::format();
+        switch ($format) {
+            case 'js':
+                $render = $this->render(['js' => 'messages.create'], compact('message'));
+                break;
+            case 'html':
+            default:
+                // No js fallback
+                $render = $this->render('messages.create', compact('message'));
+                break;
+        }
 
-			switch ($format) {
-				case 'js':
-					// Just renders messages/store_js.blade.php
-					$render = $this->render(['js' => 'messages.store'], ['message' => $message]);
-					break;
-				case 'html':
-				default:
-					// No js fallback
-					$render = \Redirect::route('messages.show', $message->id);
-					break;
-			}
-
-			return $render;
-		}
-
-		return \Redirect::route('home')->with('message', "Error: Unable to save this message");
-	}
+        return $render;
+    }
 
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		$message = Message::findOrFail($id);
-		
-		return $this->render('messages.show', compact('message'));
-	}
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function store()
+    {
+        $message = \App::make('Message');
+        $message->fill(\Input::except('_method', '_token'));
+
+        if ($message->save()) {
+            $format = \Request::format();
+
+            switch ($format) {
+                case 'js':
+                    // Just renders messages/store_js.blade.php
+                    $render = $this->render(['js' => 'messages.store'], ['message' => $message]);
+                    break;
+                case 'html':
+                default:
+                    // No js fallback
+                    $render = \Redirect::route('messages.show', $message->id);
+                    break;
+            }
+
+            return $render;
+        }
+
+        return \Redirect::route('home')->with('message', "Error: Unable to save this message");
+    }
 
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		$message = Message::findOrFail($id);
-		
-		$format = \Request::format();
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        $message = Message::findOrFail($id);
 
-		switch ($format) {
-			case 'js':
-				$render = $this->render(['js' => 'messages.edit'], compact('message'));
-				break;
-			case 'html':
-			default:
-				// No js fallback
-				$render = $this->render('messages.edit', compact('message'));
-				break;
-		}
-
-		return $render;
-	}
+        return $this->render('messages.show', compact('message'));
+    }
 
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		$message = Message::findOrFail($id);
-		$message->fill(\Input::except('_method', '_token'));
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        $message = Message::findOrFail($id);
 
-		if ($message->save()) {
-			$format = \Request::format();
+        $format = \Request::format();
 
-			switch ($format) {
-				case 'js':
-					// Just renders messages/update_js.blade.php
-					$render = $this->render(['js' => 'messages.update'], ['message' => $message]);
-					break;
-				case 'html':
-				default:
-					// No js fallback
-					$render = \Redirect::route('messages.show', $message->id);
-					break;
-			}
+        switch ($format) {
+            case 'js':
+                $render = $this->render(['js' => 'messages.edit'], compact('message'));
+                break;
+            case 'html':
+            default:
+                // No js fallback
+                $render = $this->render('messages.edit', compact('message'));
+                break;
+        }
 
-			return $render;
-		}
-
-		return \Redirect::route('home')->with('message', "Error: Unable to save this message");
-	}
+        return $render;
+    }
 
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		$message = Message::findOrFail($id);
-		
-		if ($message->delete()) {		
-			$format = \Request::format();
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        $message = Message::findOrFail($id);
+        $message->fill(\Input::except('_method', '_token'));
 
-			switch ($format) {
-				case 'js':
-					// Just renders messages/destroy_js.blade.php
-					$render = $this->render(['js' => 'messages.destroy'], compact('message'));
-					break;
-				case 'html':
-				default:
-					// No js fallback
-					$render = \Redirect::route('messages.index');
-					break;
-			}
+        if ($message->save()) {
+            $format = \Request::format();
 
-			return $render;
-		}
+            switch ($format) {
+                case 'js':
+                    // Just renders messages/update_js.blade.php
+                    $render = $this->render(['js' => 'messages.update'], ['message' => $message]);
+                    break;
+                case 'html':
+                default:
+                    // No js fallback
+                    $render = \Redirect::route('messages.show', $message->id);
+                    break;
+            }
 
-		return \Redirect::route('home')->with('message', "Error: Unable to delete this message");
-	}
+            return $render;
+        }
+
+        return \Redirect::route('home')->with('message', "Error: Unable to save this message");
+    }
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        $message = Message::findOrFail($id);
+
+        if ($message->delete()) {
+            $format = \Request::format();
+
+            switch ($format) {
+                case 'js':
+                    // Just renders messages/destroy_js.blade.php
+                    $render = $this->render(['js' => 'messages.destroy'], compact('message'));
+                    break;
+                case 'html':
+                default:
+                    // No js fallback
+                    $render = \Redirect::route('messages.index');
+                    break;
+            }
+
+            return $render;
+        }
+
+        return \Redirect::route('home')->with('message', "Error: Unable to delete this message");
+    }
 }

@@ -11,15 +11,13 @@
 |
 */
 
-App::before(function($request)
-{
-	//
+App::before(function($request) {
+    //
 });
 
 
-App::after(function($request, $response)
-{
-	Event::fire('cors', [$request, $response]);
+App::after(function($request, $response) {
+    Event::fire('cors', [$request, $response]);
 });
 
 /*
@@ -33,26 +31,21 @@ App::after(function($request, $response)
 |
 */
 
-Route::filter('auth', function()
-{
-	if (Auth::guest())
-	{
-		if (Request::ajax())
-		{
-			return Response::make('Unauthorized', 401);
-		}
-		else
-		{
-			return Redirect::guest('login');
-		}
-	}
+Route::filter('auth', function () {
+    if (Auth::guest()) {
+        if (Request::ajax()) {
+            return Response::make('Unauthorized', 401);
+        } else {
+            return Redirect::guest('login');
+        }
+    }
 });
 
 
-Route::filter('auth.basic', function()
-{
-	return Auth::basic();
+Route::filter('auth.basic', function () {
+    return Auth::basic();
 });
+
 
 /*
 |--------------------------------------------------------------------------
@@ -65,10 +58,12 @@ Route::filter('auth.basic', function()
 |
 */
 
-Route::filter('guest', function()
-{
-	if (Auth::check()) return Redirect::to('/');
+Route::filter('guest', function () {
+    if (Auth::check()) {
+        return Redirect::to('/');
+    }
 });
+
 
 /*
 |--------------------------------------------------------------------------
@@ -81,42 +76,43 @@ Route::filter('guest', function()
 |
 */
 
-Route::filter('csrf', function($route, $request) {
-	
-	/*
-	| Raises an exception if a request isn't verified. Checks:
-	|
-	| * is it a GET or HEAD request? Gets should be safe and idempotent
-	| * Does the Session CSRF token match the given token value from the input '_token' ?
-	| * Does the X-CSRF-Token header match the Session CSRF token
-	|
-	*/
- 
-	if (
-		$request->isMethod('get') || $request->isMethod('head') ||
-		Session::token() == Input::get('_token') || Session::token() == $request->header('X-CSRF-Token')
-	) {
-		// do nothing
-	} else {
-		// Choose one of this three settings:
-		
-		/*
-		| Provides an empty session during request but doesn't reset it completely. You should use it as default
-		*/
-		// Session::flush();
-		
-		/*
-		| Resets the session. Useful for API.
-		*/
-		// Session::flush();
-		// Session::regenerate(true);
-		
-		/*
-		| Raises Exception. Laravel default setting
-		*/
-		throw new Illuminate\Session\TokenMismatchException;
-	}
+Route::filter('csrf', function ($route, $request) {
+
+    /*
+    | Raises an exception if a request isn't verified. Checks:
+    |
+    | * is it a GET or HEAD request? Gets should be safe and idempotent
+    | * Does the Session CSRF token match the given token value from the input '_token' ?
+    | * Does the X-CSRF-Token header match the Session CSRF token
+    |
+    */
+
+    if (
+        $request->isMethod('get') || $request->isMethod('head') ||
+        Session::token() == Input::get('_token') || Session::token() == $request->header('X-CSRF-Token')
+    ) {
+        // do nothing
+    } else {
+        // Choose one of this three settings:
+
+        /*
+        | Provides an empty session during request but doesn't reset it completely. You should use it as default
+        */
+        // Session::flush();
+
+        /*
+        | Resets the session. Useful for API.
+        */
+        // Session::flush();
+        // Session::regenerate(true);
+
+        /*
+        | Raises Exception. Laravel default setting
+        */
+        throw new Illuminate\Session\TokenMismatchException;
+    }
 });
+
 
 /*
 | Verify that we aren't serving an unauthorized cross-origin JavaScript response.
@@ -131,18 +127,18 @@ Route::filter('csrf', function($route, $request) {
 |
 */
 
-Event::listen('cors', function($request, $response) {
-	if (
-		$request->isMethod('get') &&
-		$request->getFormat($response->headers->get('Content-Type')) == 'js' &&
-		! $request->ajax()
-	) {
-		$cross_origin_javascript_warning = "Security warning: an embedded " .
-			"<script> tag on another site requested protected JavaScript. " .
-			"If you know what you're doing, go ahead and disable CSRF " .
-			"protection on this action to permit cross-origin JavaScript embedding.";
-		
-		Log::warning($cross_origin_javascript_warning);		
-		throw new \Exception($cross_origin_javascript_warning);
-	}
+Event::listen('cors', function ($request, $response) {
+    if (
+        $request->isMethod('get') &&
+        $request->getFormat($response->headers->get('Content-Type')) == 'js' &&
+        ! $request->ajax()
+    ) {
+        $cross_origin_javascript_warning = "Security warning: an embedded " .
+            "<script> tag on another site requested protected JavaScript. " .
+            "If you know what you're doing, go ahead and disable CSRF " .
+            "protection on this action to permit cross-origin JavaScript embedding.";
+
+        Log::warning($cross_origin_javascript_warning);
+        throw new \Exception($cross_origin_javascript_warning);
+    }
 });
