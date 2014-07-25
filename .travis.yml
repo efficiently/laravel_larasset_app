@@ -19,9 +19,9 @@ before_script:
   - php artisan larasset:serve &
   - sleep 3
   - php artisan serve &
-  - sleep 4
+  - sleep 5
   - phantomjs --webdriver=4444 &
-  - sleep 4
+  - sleep 5
 
 script:
   - ./vendor/bin/codecept run acceptance --env=phantom
