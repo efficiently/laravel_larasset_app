@@ -15,8 +15,8 @@ before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
   - chmod +x ./vendor/bin/codecept # useful ?
-  - npm install vendor/efficiently/larasset
-  - php artisan larasset-serve &
+  - npm install -g vendor/efficiently/larasset
+  - php artisan larasset:serve &
   - sleep 3
   - php artisan serve &
   - sleep 4
