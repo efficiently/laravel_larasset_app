@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "af49bd3da4a360cb7be7bb2790aee0d5",
+    "hash": "d957e2f4ab5f6ca5a3e203ff4cd5fc4a",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -144,12 +144,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/efficiently/larasset.git",
-                "reference": "17661ce6d29890f55a7685f91b3b9ea19dc68ac7"
+                "reference": "fbaf21d28370ab0e13fe78e0ad05430e08176f41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efficiently/larasset/zipball/17661ce6d29890f55a7685f91b3b9ea19dc68ac7",
-                "reference": "17661ce6d29890f55a7685f91b3b9ea19dc68ac7",
+                "url": "https://api.github.com/repos/efficiently/larasset/zipball/fbaf21d28370ab0e13fe78e0ad05430e08176f41",
+                "reference": "fbaf21d28370ab0e13fe78e0ad05430e08176f41",
                 "shasum": ""
             },
             "require": {
@@ -203,7 +203,7 @@
                 "sourcemaps",
                 "versioning"
             ],
-            "time": "2014-07-23 08:38:03"
+            "time": "2014-07-25 15:16:52"
         },
         {
             "name": "filp/whoops",
