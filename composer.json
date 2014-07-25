@@ -7,6 +7,9 @@
 		"laravel/framework": "4.2.*",
 		"efficiently/larasset": "dev-master"
 	},
+	"require-dev": {
+		"codeception/codeception": "~2.0.2"
+	},
 	"autoload": {
 		"classmap": [
 			"app/commands",

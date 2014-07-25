@@ -1,0 +1,25 @@
+language: php
+
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+  - hhvm
+
+matrix:
+  allow_failures:
+    - php: 5.6
+
+before_script:
+  - export APP_ENV=testing
+  - composer self-update
+  - composer install --prefer-source --no-interaction --dev
+  - chmod +x ./vendor/bin/codecept # useful ?
+  - npm install vendor/efficiently/larasset
+  - php artisan server &
+  - sleep 2 # useful ?
+  - phantomjs --webdriver=4444 &
+  - sleep 2 # useful ?
+
+script:
+  - ./vendor/bin/codecept run acceptance --env=phantom
