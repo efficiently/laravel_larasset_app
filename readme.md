@@ -1,6 +1,8 @@
 Init Laravel with Larasset demo application
 ===========================================
 
+[![Build Status](https://travis-ci.org/efficiently/laravel_larasset_app.svg?branch=master)](https://travis-ci.org/efficiently/laravel_larasset_app)
+
 1. Get a copy of this demo on your computer
 
   ```sh
@@ -34,6 +36,5 @@ Init Laravel with Larasset demo application
   ```
 
   Then open this URL in your Web browser: [http://localhost:8000/messages](http://localhost:8000/messages)
-  
-  You can read how this demo was build [HERE](https://github.com/efficiently/larasset/wiki/Server-generated-JavaScript-Responses).
 
+  You can read how this demo was build [HERE](https://github.com/efficiently/larasset/wiki/Server-generated-JavaScript-Responses).
