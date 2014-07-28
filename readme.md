@@ -11,25 +11,13 @@ Init Laravel with Larasset demo application
   composer install
   ```
 
-2. Setup your local environment within the `bootstrap/start.php` file
-
-  You may determine your computer name using the `hostname` terminal command, then add it like this:
-
-  ```php
-  <?php
-
-  $env = $app->detectEnvironment(array(
-      'local' => array('your-computer-name'),
-  ));
-  ```
-
-3. Install the Node.js module of this package
+2. Install the Node.js module of this package
 
   ```sh
   npm install -g vendor/efficiently/larasset
   ```
 
-6. Run your Laravel application and the assets servers
+3. Run your Laravel application and the assets servers
 
   ```sh
   php artisan server
