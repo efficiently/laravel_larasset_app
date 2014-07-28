@@ -9,14 +9,12 @@ before_script:
   - export APP_ENV=testing
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
-  - chmod +x ./vendor/bin/codecept # useful ?
   - npm install -g vendor/efficiently/larasset
-  - php artisan larasset:serve &
-  - sleep 3
-  - php artisan serve &
+  - php artisan server &
   - sleep 5
   - phantomjs --webdriver=4444 &
   - sleep 5
 
 script:
+  - ./vendor/bin/codecept run acceptance --env=php
   - ./vendor/bin/codecept run acceptance --env=phantom
