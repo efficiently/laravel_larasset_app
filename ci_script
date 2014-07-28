@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Run tests with Larasset server who serve assets
+## Config
+export APP_ENV=testing
+php artisan server &
+sleep 5
+## Tests
+./vendor/bin/codecept run acceptance --env=php
+./vendor/bin/codecept run acceptance --env=phantom
+./vendor/bin/codecept run acceptance --env=firefox
+
+# Run tests with precompiled assets
+## Config
+killall php node # Kill the Laravel and Larasset servers
+export ASSETS_ENV=$APP_ENV # Simulate production environment for Larasset
+php artisan larasset:precompile --environment $APP_ENV
+php artisan serve & # Run only the Laravel server because the assets are now precompiled
+sleep 4
+## Tests
+./vendor/bin/codecept run acceptance --env=php
+./vendor/bin/codecept run acceptance --env=phantom
+./vendor/bin/codecept run acceptance --env=firefox
