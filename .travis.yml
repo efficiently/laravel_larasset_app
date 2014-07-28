@@ -7,14 +7,17 @@ php:
 
 before_script:
   - export APP_ENV=testing
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - wget http://selenium-release.storage.googleapis.com/2.42/selenium-server-standalone-2.42.2.jar
+  - java -jar selenium-server-standalone-2.42.2.jar -port 4444 &
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
   - npm install -g vendor/efficiently/larasset
   - php artisan server &
   - sleep 5
-  - phantomjs --webdriver=4444 &
-  - sleep 5
 
 script:
   - ./vendor/bin/codecept run acceptance --env=php
   - ./vendor/bin/codecept run acceptance --env=phantom
+  - ./vendor/bin/codecept run acceptance --env=firefox
