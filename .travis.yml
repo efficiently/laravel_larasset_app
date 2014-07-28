@@ -21,3 +21,11 @@ script:
   - ./vendor/bin/codecept run acceptance --env=php
   - ./vendor/bin/codecept run acceptance --env=phantom
   - ./vendor/bin/codecept run acceptance --env=firefox
+  - killall php php5 node # Kill the Laravel and Larasset servers
+  - export ASSETS_ENV=$APP_ENV # Simulate production environment for Larasset
+  - php artisan larasset:precompile --environment $APP_ENV
+  - php artisan serve &# Run only the Laravel server because the assets are now precompiled
+  - sleep 4
+  - ./vendor/bin/codecept run acceptance --env=php
+  - ./vendor/bin/codecept run acceptance --env=phantom
+  - ./vendor/bin/codecept run acceptance --env=firefox
