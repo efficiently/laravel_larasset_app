@@ -144,12 +144,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/efficiently/larasset.git",
-                "reference": "4f4b4ff2dc1a0943a5b940f337d1079ff02d3728"
+                "reference": "bac30cff251f12f97022d5a5f6e26d9a480b9474"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efficiently/larasset/zipball/4f4b4ff2dc1a0943a5b940f337d1079ff02d3728",
-                "reference": "4f4b4ff2dc1a0943a5b940f337d1079ff02d3728",
+                "url": "https://api.github.com/repos/efficiently/larasset/zipball/bac30cff251f12f97022d5a5f6e26d9a480b9474",
+                "reference": "bac30cff251f12f97022d5a5f6e26d9a480b9474",
                 "shasum": ""
             },
             "require": {
@@ -203,7 +203,7 @@
                 "sourcemaps",
                 "versioning"
             ],
-            "time": "2014-07-28 08:33:59"
+            "time": "2014-07-28 09:29:14"
         },
         {
             "name": "filp/whoops",
