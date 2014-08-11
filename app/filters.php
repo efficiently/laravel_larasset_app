@@ -98,7 +98,7 @@ Route::filter('csrf', function ($route, $request) {
         /*
         | Provides an empty session during request but doesn't reset it completely. You should use it as default
         */
-        // Session::flush();
+        Session::flush();
 
         /*
         | Resets the session. Useful for API.
@@ -109,7 +109,7 @@ Route::filter('csrf', function ($route, $request) {
         /*
         | Raises Exception. Laravel default setting
         */
-        throw new Illuminate\Session\TokenMismatchException;
+        // throw new Illuminate\Session\TokenMismatchException;
     }
 });
 
