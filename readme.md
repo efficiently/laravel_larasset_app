@@ -1,7 +1,9 @@
-Init Laravel with Larasset demo application
+Init Laravel with [Larasset](https://github.com/efficiently/larasset) demo application
 ===========================================
 
 [![Build Status](https://travis-ci.org/efficiently/laravel_larasset_app.svg?branch=master)](https://travis-ci.org/efficiently/laravel_larasset_app)
+
+Give to your Laravel RESTful controllers some Ajax requests quickly and easily!
 
 1. Get a copy of this demo on your computer
 
