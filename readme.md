@@ -3,7 +3,18 @@ Init Laravel with [Larasset](https://github.com/efficiently/larasset) demo appli
 
 [![Build Status](https://travis-ci.org/efficiently/laravel_larasset_app.svg?branch=master)](https://travis-ci.org/efficiently/laravel_larasset_app)
 
-Give to your Laravel RESTful controllers some Ajax requests quickly and easily!
+This demo will show you how to give to your Laravel application some Ajax requests quickly and easily!
+
+Prerequisites
+-------------
+
+You must [install Node.js](http://nodejs.org) on your computer <small>(development environment only)</small>.
+
+Larasset package is **only** compatible with **PHP >= 5.4**.
+
+
+Installation
+------------
 
 1. Get a copy of this demo on your computer
 
