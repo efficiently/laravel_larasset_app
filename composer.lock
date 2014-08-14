@@ -89,16 +89,16 @@
         },
         {
             "name": "efficiently/jquery-laravel",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/efficiently/jquery-laravel.git",
-                "reference": "0928d4951340b79b52365f92ab94320ec32a8ca4"
+                "reference": "ffbad10359a3cde00dd4ea59df9074016bbb4eda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efficiently/jquery-laravel/zipball/0928d4951340b79b52365f92ab94320ec32a8ca4",
-                "reference": "0928d4951340b79b52365f92ab94320ec32a8ca4",
+                "url": "https://api.github.com/repos/efficiently/jquery-laravel/zipball/ffbad10359a3cde00dd4ea59df9074016bbb4eda",
+                "reference": "ffbad10359a3cde00dd4ea59df9074016bbb4eda",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                 "ujs",
                 "unobtrusive"
             ],
-            "time": "2014-08-12 14:19:51"
+            "time": "2014-08-14 09:49:32"
         },
         {
             "name": "efficiently/larasset",
@@ -145,12 +145,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/efficiently/larasset.git",
-                "reference": "ab243379d14eb616ac60b268f821402b595faa7d"
+                "reference": "986cba9a0f63c9b6cdc51d1f8b81e837c9ced286"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efficiently/larasset/zipball/ab243379d14eb616ac60b268f821402b595faa7d",
-                "reference": "ab243379d14eb616ac60b268f821402b595faa7d",
+                "url": "https://api.github.com/repos/efficiently/larasset/zipball/986cba9a0f63c9b6cdc51d1f8b81e837c9ced286",
+                "reference": "986cba9a0f63c9b6cdc51d1f8b81e837c9ced286",
                 "shasum": ""
             },
             "require": {
@@ -204,7 +204,7 @@
                 "sourcemaps",
                 "versioning"
             ],
-            "time": "2014-08-12 14:30:48"
+            "time": "2014-08-14 10:52:35"
         },
         {
             "name": "filp/whoops",
