@@ -5,6 +5,7 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
+		"patricktalmadge/bootstrapper": "~4.1.19",
 		"efficiently/larasset": "dev-master"
 	},
 	"require-dev": {
