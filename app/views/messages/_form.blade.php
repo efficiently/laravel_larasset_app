@@ -8,6 +8,6 @@
         {{ Form::textarea('body') }}
     </div>
     <div class="actions">
-        {{ Form::submit('Send message') }}
+        {{ Form::submit('Send message', ['data-disable-with' => "Saving this message..."]) }}
     </div>
 {{ form_for_close() }}
