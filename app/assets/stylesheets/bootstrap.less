@@ -1,4 +1,4 @@
-@import "bootstrap/custom_bootstrap";
+@import "bootstrap_custom"; // Bootstrap with theme and without Glyphicons
 
 body {
   padding-top: 80px; // 60px to make the container go all the way to the bottom of the topbar
@@ -10,7 +10,14 @@ body {
 // you may use and inherit here
 //
 // If you'd like to override bootstrap's own variables, you can do so here as well
-// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
+// See http://getbootstrap.com/customize/#less-variables for their names and documentation
 //
 // Example:
-// @linkColor: #ff0000;
+// @link-color: #ff0000;
+
+.button-to-inline {
+    display: inline;
+    >div {
+        display: inline;
+    }
+}
