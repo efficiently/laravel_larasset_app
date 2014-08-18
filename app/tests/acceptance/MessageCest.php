@@ -73,7 +73,7 @@ class MessageCest
         $I->amOnPage('/messages');
         $I->see('All messages');
 
-        $I->click('(edit)', '#message_'.$id);
+        $I->click('edit', '#message_'.$id);
         $I->seeInField('title', 'Automatic title '.$id);
         $I->seeInField('body', 'Automatic body '.$id);
         $I->fillField(['css' => "#edit_message_$id [name=title]"], 'Edited title '.$id);
@@ -102,7 +102,7 @@ class MessageCest
 
         $this->alwaysAcceptPopup($I);//UJS
 
-        $I->click('(remove)', '#message_'.$id);
+        $I->click('remove', '#message_'.$id);
         // $I->acceptPopup();// Not compatible with PhantomJS
 
         // Wait for all jQuery ajax requests are finished
