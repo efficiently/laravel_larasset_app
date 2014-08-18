@@ -12,18 +12,24 @@
       </dd>
     </dl>
   </div>
-  <div class="col-md-2">
+  <div class="col-lg-2 col-md-3">
     <div class="actions">
       {{
-        Button::sm_link(route('messages.edit', $message->id), 'edit', [
+        Button::link(route('messages.edit', $message->id), 'edit', [
           'data-remote' => true,
         ])->with_icon('pencil')
       }}
+
       {{
-        Button::danger_sm_link(route('messages.destroy', $message->id), 'remove', [
-          'data-method' => 'delete',
-          'data-confirm' => "Are you sure?", 'data-remote' => true,
-        ])->with_icon('trash-o')
+        button_to(Icon::trash_o().' remove', [
+          'route' => ['messages.destroy', $message->id],
+          'method' => 'delete',
+          'data-remote' => true,
+          'data-confirm' => "Are you sure?",
+          'data-disable-with' => "removing...",
+          'formClass' => 'button-to-inline',
+          'class' => 'btn-danger btn',
+        ])
       }}
     </div>
   </div>
