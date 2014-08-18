@@ -36,11 +36,7 @@
             <span class="sr-only">Show navigation menu</span>
             <span class="glyphicon glyphicon-bars"></span>
           </button>
-
-          <div class="navbar-brand">
-            Larasset demo
-          </div>{{-- /.navbar-brand --}}
-
+          {{ link_to(route('home'), "Larasset demo", ['class' => 'navbar-brand']) }}
         </div>{{-- /.navbar-header --}}
 
         <div class="collapse navbar-collapse">
@@ -53,7 +49,9 @@
     </div>{{-- /.navbar-fixed-top --}}
 
     <div class="container">
-      @yield('content')
+      <section id="content">
+        @yield('content')
+      </section>{{-- /content --}}
     </div>{{-- /container --}}
   </body>
 </html>
