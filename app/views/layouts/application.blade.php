@@ -46,9 +46,16 @@
         </div>{{-- /.navbar-collapse --}}
 
       </div>{{-- /container --}}
+
     </div>{{-- /.navbar-fixed-top --}}
 
     <div class="container">
+      {{-- check for flash notification messages --}}
+      @foreach (['info', 'success', 'warning', 'danger', 'error'] as $level)
+        {{ Alert::{$level}( Session::get($level), ['data-alert' => 'alert', 'class' => (Session::has($level)) ? 'fade in' : 'fade in hidden'] ) }}
+        <?php Session::forget($level); ?>
+      @endforeach
+
       <section id="content">
         @yield('content')
       </section>{{-- /content --}}
