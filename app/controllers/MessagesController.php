@@ -48,10 +48,10 @@ class MessagesController extends BaseController
      */
     public function store()
     {
-        $message = \App::make('Message');
-        $message->fill(\Input::except('_method', '_token'));
+        $inputs = \Input::except('_method', '_token');
+        $validator = \Validator::make($inputs, Message::$rules);
 
-        if ($message->save()) {
+        if ($validator->passes() && $message = Message::create($inputs)) {
             $format = \Request::format();
 
             switch ($format) {
@@ -69,7 +69,8 @@ class MessagesController extends BaseController
             return $render;
         }
 
-        return \Redirect::route('home')->with('message', "Error: Unable to save this message");
+        return \Redirect::route('messages.create')->withInput()
+            ->with('error', "Error: Unable to save this message");
     }
 
 
@@ -123,9 +124,10 @@ class MessagesController extends BaseController
     public function update($id)
     {
         $message = Message::findOrFail($id);
-        $message->fill(\Input::except('_method', '_token'));
+        $inputs = \Input::except('_method', '_token');
+        $validator = \Validator::make($inputs, Message::$rules);
 
-        if ($message->save()) {
+        if ($validator->passes() && $message->update($inputs)) {
             $format = \Request::format();
 
             switch ($format) {
@@ -143,7 +145,8 @@ class MessagesController extends BaseController
             return $render;
         }
 
-        return \Redirect::route('home')->with('message', "Error: Unable to save this message");
+        return \Redirect::route('messages.edit', $message->id)->withInput()
+            ->with('error', "Error: Unable to save this message");
     }
 
 
@@ -175,6 +178,6 @@ class MessagesController extends BaseController
             return $render;
         }
 
-        return \Redirect::route('home')->with('message', "Error: Unable to delete this message");
+        return \Redirect::route('messages.show', $message->id)->with('error', "Error: Unable to remove this message");
     }
 }
