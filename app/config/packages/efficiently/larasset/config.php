@@ -75,9 +75,8 @@ return [
          */
         'precompile' => array_merge(
             ['application.css', 'application.js'],
-            File::allFiles('provider/assets/fonts'),
-            File::allFiles('provider/assets/images'),
-            File::allFiles('provider/assets/javascripts/compat')
+            File::allFiles(base_path().'/provider/assets/fonts'),
+            File::allFiles(base_path().'/provider/assets/javascripts/compat')
         ),
 
 ];
