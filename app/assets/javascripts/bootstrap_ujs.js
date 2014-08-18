@@ -1,4 +1,5 @@
 //= require twitter/bootstrap
+//= require bootstrap_support
 
 // Use jQuery in no conflict mode
 (function($) {
