@@ -236,16 +236,16 @@
         },
         {
             "name": "efficiently/jquery-laravel",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/efficiently/jquery-laravel.git",
-                "reference": "86a3915dfef4b76ed9d3e353791df2e270535321"
+                "reference": "ada244ab8b1b51f7c8e2d3f464c63236bb04dd7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efficiently/jquery-laravel/zipball/86a3915dfef4b76ed9d3e353791df2e270535321",
-                "reference": "86a3915dfef4b76ed9d3e353791df2e270535321",
+                "url": "https://api.github.com/repos/efficiently/jquery-laravel/zipball/ada244ab8b1b51f7c8e2d3f464c63236bb04dd7e",
+                "reference": "ada244ab8b1b51f7c8e2d3f464c63236bb04dd7e",
                 "shasum": ""
             },
             "require": {
@@ -284,7 +284,7 @@
                 "ujs",
                 "unobtrusive"
             ],
-            "time": "2014-08-16 11:36:39"
+            "time": "2014-08-25 08:33:09"
         },
         {
             "name": "efficiently/larasset",
@@ -292,12 +292,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/efficiently/larasset.git",
-                "reference": "986cba9a0f63c9b6cdc51d1f8b81e837c9ced286"
+                "reference": "1c671dd4e7ce6f3ef8817a14e84ed6932b95d69c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efficiently/larasset/zipball/986cba9a0f63c9b6cdc51d1f8b81e837c9ced286",
-                "reference": "986cba9a0f63c9b6cdc51d1f8b81e837c9ced286",
+                "url": "https://api.github.com/repos/efficiently/larasset/zipball/1c671dd4e7ce6f3ef8817a14e84ed6932b95d69c",
+                "reference": "1c671dd4e7ce6f3ef8817a14e84ed6932b95d69c",
                 "shasum": ""
             },
             "require": {
@@ -310,7 +310,9 @@
             },
             "type": "library",
             "autoload": {
-                "classmap": [],
+                "classmap": [
+
+                ],
                 "files": [
                     "src/Efficiently/Larasset/helpers.php"
                 ],
@@ -349,7 +351,7 @@
                 "sourcemaps",
                 "versioning"
             ],
-            "time": "2014-08-14 10:52:35"
+            "time": "2014-08-25 08:42:28"
         },
         {
             "name": "filp/whoops",
@@ -1949,23 +1951,23 @@
     "packages-dev": [
         {
             "name": "codeception/codeception",
-            "version": "2.0.4",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Codeception.git",
-                "reference": "ad5eecbb8991b9432e6f2a236d7b2e6a82c46864"
+                "reference": "0314ca60e48e1d2ae62139029efd942362f37542"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/ad5eecbb8991b9432e6f2a236d7b2e6a82c46864",
-                "reference": "ad5eecbb8991b9432e6f2a236d7b2e6a82c46864",
+                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/0314ca60e48e1d2ae62139029efd942362f37542",
+                "reference": "0314ca60e48e1d2ae62139029efd942362f37542",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-mbstring": "*",
                 "facebook/webdriver": "~0.4",
-                "guzzlehttp/guzzle": "4.*",
+                "guzzlehttp/guzzle": "~4.0",
                 "php": ">=5.4.0",
                 "phpunit/phpunit": "~4.0",
                 "symfony/browser-kit": "~2.4",
@@ -1977,11 +1979,12 @@
                 "symfony/yaml": "~2.4"
             },
             "require-dev": {
-                "codeception/specify": "*",
-                "facebook/php-sdk": "3.*",
-                "monolog/monolog": "*",
-                "phpseclib/phpseclib": "0.3.6",
-                "videlalvaro/php-amqplib": "*"
+                "codeception/specify": "~0.3",
+                "facebook/php-sdk": "~3.2",
+                "monolog/monolog": "~1.8",
+                "pda/pheanstalk": "~2.0",
+                "phpseclib/phpseclib": "~0.3.6",
+                "videlalvaro/php-amqplib": "~2.4"
             },
             "suggest": {
                 "codeception/phpbuiltinserver": "Extension to start and stop PHP built-in web server for your tests",
@@ -2019,7 +2022,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2014-08-05 02:15:03"
+            "time": "2014-08-21 03:21:23"
         },
         {
             "name": "facebook/webdriver",
@@ -2063,21 +2066,21 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "4.1.8",
+            "version": "4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "e196b8f44f9492a11261ea8f7b9724613a198daf"
+                "reference": "47ca212e985d962b3cbd67675eec54bb72d66062"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/e196b8f44f9492a11261ea8f7b9724613a198daf",
-                "reference": "e196b8f44f9492a11261ea8f7b9724613a198daf",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/47ca212e985d962b3cbd67675eec54bb72d66062",
+                "reference": "47ca212e985d962b3cbd67675eec54bb72d66062",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "guzzlehttp/streams": "~1.4",
+                "guzzlehttp/streams": "~2.1",
                 "php": ">=5.4.0"
             },
             "require-dev": {
@@ -2091,7 +2094,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "4.2-dev"
                 }
             },
             "autoload": {
@@ -2124,20 +2127,20 @@
                 "rest",
                 "web service"
             ],
-            "time": "2014-08-14 20:29:51"
+            "time": "2014-08-20 05:30:12"
         },
         {
             "name": "guzzlehttp/streams",
-            "version": "1.5.1",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/streams.git",
-                "reference": "fb0d1ee29987c2bdc59867bffaade6fc88c2675f"
+                "reference": "f91b721d73f0e561410903b3b3c90a5d0e40b534"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/streams/zipball/fb0d1ee29987c2bdc59867bffaade6fc88c2675f",
-                "reference": "fb0d1ee29987c2bdc59867bffaade6fc88c2675f",
+                "url": "https://api.github.com/repos/guzzle/streams/zipball/f91b721d73f0e561410903b3b3c90a5d0e40b534",
+                "reference": "f91b721d73f0e561410903b3b3c90a5d0e40b534",
                 "shasum": ""
             },
             "require": {
@@ -2149,7 +2152,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5-dev"
+                    "dev-master": "2.0-dev"
                 }
             },
             "autoload": {
@@ -2177,7 +2180,7 @@
                 "Guzzle",
                 "stream"
             ],
-            "time": "2014-08-10 23:57:01"
+            "time": "2014-08-17 21:15:53"
         },
         {
             "name": "ocramius/instantiator",
@@ -2542,16 +2545,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.2.0",
+            "version": "4.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "58db726aa45fe26bca93f692cb3d77e9a46b7830"
+                "reference": "a33fa68ece9f8c68589bfc2da8d2794e27b820bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/58db726aa45fe26bca93f692cb3d77e9a46b7830",
-                "reference": "58db726aa45fe26bca93f692cb3d77e9a46b7830",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a33fa68ece9f8c68589bfc2da8d2794e27b820bc",
+                "reference": "a33fa68ece9f8c68589bfc2da8d2794e27b820bc",
                 "shasum": ""
             },
             "require": {
@@ -2612,7 +2615,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-08-08 05:13:30"
+            "time": "2014-08-18 05:12:30"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -2988,12 +2991,18 @@
             "time": "2014-08-05 09:00:40"
         }
     ],
-    "aliases": [],
+    "aliases": [
+
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "efficiently/larasset": 20
     },
     "prefer-stable": true,
-    "platform": [],
-    "platform-dev": []
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
 }
