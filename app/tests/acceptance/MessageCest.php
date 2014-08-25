@@ -27,7 +27,7 @@ class MessageCest
         $I->wantTo('add a message');
         $I->amOnPage('/messages');
         $I->see('All messages');
-        $I->click(['link' => 'Add a message']);
+        $I->click('Add a message');
         $I->seeCurrentUrlEquals('/messages/create');
         $I->fillField(['css' => '#create_message [name=title]'], 'Automatic title '.$id);
         $I->fillField(['css' => '#create_message [name=body]'], 'Automatic body '.$id);
