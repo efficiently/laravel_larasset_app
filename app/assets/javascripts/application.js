@@ -11,6 +11,8 @@
 // The available directives right now are require, require_directory, and require_tree
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap_ujs
 //= require_tree .
+//= require turbolinks

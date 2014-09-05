@@ -7,7 +7,8 @@
 		"laravel/framework": "4.2.*",
 		"anahkiasen/former": "3.5.*",
 		"patricktalmadge/bootstrapper": "~4.1.19",
-		"efficiently/larasset": "dev-master"
+		"efficiently/larasset": "dev-master",
+		"efficiently/turbolinks": "dev-master"
 	},
 	"require-dev": {
 		"codeception/codeception": "~2.0.2"
