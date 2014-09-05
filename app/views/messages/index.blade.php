@@ -9,7 +9,7 @@
 
     {{
       Button::lg_success_link(route('messages.create'), 'Add a message', [
-        'id' => 'new_link', 'data-remote' => true
+        'id' => 'create_message_link', 'data-remote' => true
       ])->with_icon('plus-circle')
     }}
 @stop
