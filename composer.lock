@@ -236,16 +236,16 @@
         },
         {
             "name": "efficiently/jquery-laravel",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/efficiently/jquery-laravel.git",
-                "reference": "218acc52f47233b65dac37411607e31c73911886"
+                "reference": "60aa8326f7a938360dc26df8e04b35c5608cef9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efficiently/jquery-laravel/zipball/218acc52f47233b65dac37411607e31c73911886",
-                "reference": "218acc52f47233b65dac37411607e31c73911886",
+                "url": "https://api.github.com/repos/efficiently/jquery-laravel/zipball/60aa8326f7a938360dc26df8e04b35c5608cef9c",
+                "reference": "60aa8326f7a938360dc26df8e04b35c5608cef9c",
                 "shasum": ""
             },
             "require": {
@@ -274,7 +274,7 @@
             "description": "This package provides jQuery and the jQuery-ujs driver for your Laravel 4+ application.",
             "keywords": [
                 "ajax",
-                "asset_pipeline",
+                "asset pipeline",
                 "assets",
                 "javascript",
                 "jquery",
@@ -284,7 +284,7 @@
                 "ujs",
                 "unobtrusive"
             ],
-            "time": "2014-09-05 17:28:00"
+            "time": "2014-09-16 16:17:56"
         },
         {
             "name": "efficiently/larasset",
@@ -292,16 +292,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/efficiently/larasset.git",
-                "reference": "1c671dd4e7ce6f3ef8817a14e84ed6932b95d69c"
+                "reference": "1e73498a587dd14c055dab20723657b5e99c0bf0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efficiently/larasset/zipball/1c671dd4e7ce6f3ef8817a14e84ed6932b95d69c",
-                "reference": "1c671dd4e7ce6f3ef8817a14e84ed6932b95d69c",
+                "url": "https://api.github.com/repos/efficiently/larasset/zipball/1e73498a587dd14c055dab20723657b5e99c0bf0",
+                "reference": "1e73498a587dd14c055dab20723657b5e99c0bf0",
                 "shasum": ""
             },
             "require": {
-                "efficiently/jquery-laravel": "1.0.*",
+                "efficiently/jquery-laravel": "~1.0.5",
                 "php": ">=5.4.0"
             },
             "require-dev": {
@@ -310,7 +310,9 @@
             },
             "type": "library",
             "autoload": {
-                "classmap": [],
+                "classmap": [
+
+                ],
                 "files": [
                     "src/Efficiently/Larasset/helpers.php"
                 ],
@@ -349,7 +351,7 @@
                 "sourcemaps",
                 "versioning"
             ],
-            "time": "2014-08-25 08:42:28"
+            "time": "2014-09-17 07:43:52"
         },
         {
             "name": "efficiently/turbolinks",
@@ -357,12 +359,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/efficiently/turbolinks.git",
-                "reference": "7494337fba5643593ba24944ff4f35c93e1757a2"
+                "reference": "e8a2cb063d5d7969938c79306fa5c92ca504e055"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efficiently/turbolinks/zipball/7494337fba5643593ba24944ff4f35c93e1757a2",
-                "reference": "7494337fba5643593ba24944ff4f35c93e1757a2",
+                "url": "https://api.github.com/repos/efficiently/turbolinks/zipball/e8a2cb063d5d7969938c79306fa5c92ca504e055",
+                "reference": "e8a2cb063d5d7969938c79306fa5c92ca504e055",
                 "shasum": ""
             },
             "require": {
@@ -402,7 +404,7 @@
                 "pjax",
                 "turbolinks"
             ],
-            "time": "2014-09-05 17:50:52"
+            "time": "2014-09-16 16:20:58"
         },
         {
             "name": "filp/whoops",
@@ -604,16 +606,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v4.2.8",
+            "version": "v4.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "e60ea917ab862254a6db37fa9cb8933138c1e73c"
+                "reference": "14665bc3c38c3ec24a12c904d013a663dc4a1d8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/e60ea917ab862254a6db37fa9cb8933138c1e73c",
-                "reference": "e60ea917ab862254a6db37fa9cb8933138c1e73c",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/14665bc3c38c3ec24a12c904d013a663dc4a1d8f",
+                "reference": "14665bc3c38c3ec24a12c904d013a663dc4a1d8f",
                 "shasum": ""
             },
             "require": {
@@ -715,7 +717,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-08-05 19:52:17"
+            "time": "2014-09-15 02:45:24"
         },
         {
             "name": "monolog/monolog",
@@ -787,16 +789,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.11.0",
+            "version": "1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "2b60366be6dcb9f9cd3e244ab25eb98eaea99551"
+                "reference": "cde7a00d1410a17fb6d61b993cb017a78be1137c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/2b60366be6dcb9f9cd3e244ab25eb98eaea99551",
-                "reference": "2b60366be6dcb9f9cd3e244ab25eb98eaea99551",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/cde7a00d1410a17fb6d61b993cb017a78be1137c",
+                "reference": "cde7a00d1410a17fb6d61b993cb017a78be1137c",
                 "shasum": ""
             },
             "require": {
@@ -829,7 +831,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2014-08-26 03:18:44"
+            "time": "2014-09-10 03:26:33"
         },
         {
             "name": "nikic/php-parser",
@@ -990,16 +992,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "0.3.7",
+            "version": "0.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "8b8c62f278e363b75ddcacaf5803710232fbd3e4"
+                "reference": "5085202f1f37769aae59f9711c423f28159c9b29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/8b8c62f278e363b75ddcacaf5803710232fbd3e4",
-                "reference": "8b8c62f278e363b75ddcacaf5803710232fbd3e4",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/5085202f1f37769aae59f9711c423f28159c9b29",
+                "reference": "5085202f1f37769aae59f9711c423f28159c9b29",
                 "shasum": ""
             },
             "require": {
@@ -1008,6 +1010,7 @@
             "require-dev": {
                 "phing/phing": "2.7.*",
                 "phpunit/phpunit": "4.0.*",
+                "sami/sami": "1.*",
                 "squizlabs/php_codesniffer": "1.*"
             },
             "suggest": {
@@ -1083,7 +1086,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2014-07-05 16:36:21"
+            "time": "2014-09-13 02:42:45"
         },
         {
             "name": "predis/predis",
@@ -2170,16 +2173,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "4.2.1",
+            "version": "4.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "47ca212e985d962b3cbd67675eec54bb72d66062"
+                "reference": "9c4fbbf6457768f5036fbd88f1229f3fca812a5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/47ca212e985d962b3cbd67675eec54bb72d66062",
-                "reference": "47ca212e985d962b3cbd67675eec54bb72d66062",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/9c4fbbf6457768f5036fbd88f1229f3fca812a5d",
+                "reference": "9c4fbbf6457768f5036fbd88f1229f3fca812a5d",
                 "shasum": ""
             },
             "require": {
@@ -2231,7 +2234,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2014-08-20 05:30:12"
+            "time": "2014-09-08 22:11:58"
         },
         {
             "name": "guzzlehttp/streams",
@@ -2648,16 +2651,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.2.4",
+            "version": "4.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "f0c2d374ad06ec1e56c721f4ed87c59ff35f440e"
+                "reference": "c28a790620fe30b049bb693be1ef9cd4e0fe906c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/f0c2d374ad06ec1e56c721f4ed87c59ff35f440e",
-                "reference": "f0c2d374ad06ec1e56c721f4ed87c59ff35f440e",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c28a790620fe30b049bb693be1ef9cd4e0fe906c",
+                "reference": "c28a790620fe30b049bb693be1ef9cd4e0fe906c",
                 "shasum": ""
             },
             "require": {
@@ -2718,20 +2721,20 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-08-31 06:46:49"
+            "time": "2014-09-14 09:31:24"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "42e589e08bc86e3e9bdf20d385e948347788505b"
+                "reference": "b241b18d87a47093f20fae8b0ba40379b00bd53a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/42e589e08bc86e3e9bdf20d385e948347788505b",
-                "reference": "42e589e08bc86e3e9bdf20d385e948347788505b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/b241b18d87a47093f20fae8b0ba40379b00bd53a",
+                "reference": "b241b18d87a47093f20fae8b0ba40379b00bd53a",
                 "shasum": ""
             },
             "require": {
@@ -2740,7 +2743,7 @@
                 "phpunit/php-text-template": "~1.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.2.*@dev"
+                "phpunit/phpunit": "~4.2"
             },
             "suggest": {
                 "ext-soap": "*"
@@ -2757,9 +2760,6 @@
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
-            "include-path": [
-                ""
-            ],
             "license": [
                 "BSD-3-Clause"
             ],
@@ -2776,7 +2776,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2014-08-02 13:50:58"
+            "time": "2014-09-06 17:32:37"
         },
         {
             "name": "sebastian/comparator",
@@ -3094,13 +3094,19 @@
             "time": "2014-08-31 03:22:04"
         }
     ],
-    "aliases": [],
+    "aliases": [
+
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "efficiently/larasset": 20,
         "efficiently/turbolinks": 20
     },
     "prefer-stable": true,
-    "platform": [],
-    "platform-dev": []
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
 }
