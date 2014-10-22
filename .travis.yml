@@ -12,7 +12,7 @@ before_script:
   - java -jar selenium-server-standalone-2.42.2.jar -port 4444 &
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
-  - npm install -g vendor/efficiently/larasset
+  - npm install larasset-js
   - chmod +x ./ci_script
 
 script: ./ci_script
