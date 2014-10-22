@@ -105,8 +105,8 @@ class MessageCest
         $I->click('remove', '#message_'.$id);
         // $I->acceptPopup();// Not compatible with PhantomJS
 
-        // Wait for all jQuery ajax requests are finished
-        $I->waitForJS("return jQuery.active == 0;", 2);//UJS
+        // Wait one second for AJAX requests are finished
+        $I->wait(1);
 
         // $I->dontSeeElement('#message_'.$id); // Too slow, weird ...
         $I->dontSee('Edited title '.$id);
