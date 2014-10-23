@@ -27,7 +27,7 @@ Installation
 2. Install the Node.js module of this package
 
   ```sh
-  npm install -g vendor/efficiently/larasset
+  npm install -g larasset-js
   ```
 
 3. Run your Laravel application and the assets servers
