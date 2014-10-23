@@ -4,7 +4,7 @@
 ## Config
 export APP_ENV=testing
 php artisan server &
-sleep 6
+sleep 5
 ## Tests
 ./vendor/bin/codecept run acceptance --env=php
 ./vendor/bin/codecept run acceptance --env=phantom
@@ -16,7 +16,7 @@ killall php node # Kill the Laravel and Larasset servers
 export ASSETS_ENV=$APP_ENV # Simulate production environment for Larasset
 php artisan larasset:precompile --environment $APP_ENV
 php artisan serve & # Run only the Laravel server because the assets are now precompiled
-sleep 6
+sleep 4
 ## Tests
 ./vendor/bin/codecept run acceptance --env=php
 ./vendor/bin/codecept run acceptance --env=phantom
