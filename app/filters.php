@@ -11,12 +11,12 @@
 |
 */
 
-App::before(function($request) {
+App::before(function ($request) {
     //
 });
 
 
-App::after(function($request, $response) {
+App::after(function ($request, $response) {
     Event::fire('cors', [$request, $response]);
 });
 
