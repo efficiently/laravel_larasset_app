@@ -89,7 +89,7 @@ Route::filter('csrf', function ($route, $request) {
 
     if (
         $request->isMethod('get') || $request->isMethod('head') ||
-        Session::token() == Input::get('_token') || Session::token() == $request->header('X-CSRF-Token')
+        Session::token() === Input::get('_token') || Session::token() === $request->header('X-CSRF-Token')
     ) {
         // do nothing
     } else {
@@ -130,7 +130,7 @@ Route::filter('csrf', function ($route, $request) {
 Event::listen('cors', function ($request, $response) {
     if (
         $request->isMethod('get') &&
-        $request->getFormat($response->headers->get('Content-Type')) == 'js' &&
+        $request->getFormat($response->headers->get('Content-Type')) === 'js' &&
         ! $request->ajax()
     ) {
         $cross_origin_javascript_warning = "Security warning: an embedded " .
