@@ -19,7 +19,7 @@ if ./vendor/bin/codecept run acceptance --env=php ; then
         sleep 4
         ## Tests
         if ./vendor/bin/codecept run acceptance --env=php ; then
-          if ! ./vendor/bin/codecept run acceptance --env=phantom ; then
+          if ./vendor/bin/codecept run acceptance --env=phantom ; then
             if ! ./vendor/bin/codecept run acceptance --env=firefox ; then
               exit 1
             fi
