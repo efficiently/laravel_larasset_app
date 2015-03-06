@@ -13,7 +13,6 @@ if ./vendor/bin/codecept run acceptance --env=php ; then
       # Run tests with precompiled assets
       ## Config
       killall php node # Kill the Laravel and Larasset servers
-sleep 2
       export ASSETS_ENV=$APP_ENV # Simulate production environment for Larasset
       if php artisan larasset:precompile --assets-env $APP_ENV ; then
         php artisan serve & # Run only the Laravel server because the assets are now precompiled
