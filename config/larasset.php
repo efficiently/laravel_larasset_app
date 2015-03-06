@@ -1,5 +1,7 @@
 <?php
 
+$file = new Illuminate\Filesystem\Filesystem;
+
 return [
 
         /**
@@ -76,8 +78,8 @@ return [
          */
         'precompile' => array_merge(
             ['app.css', 'app.js'],
-            with(new Illuminate\Filesystem\Filesystem)->allFiles(base_path().'/provider/assets/fonts'),
-            with(new Illuminate\Filesystem\Filesystem)->allFiles(base_path().'/provider/assets/js/compat')
+            $file->allFiles(base_path().'/provider/assets/fonts'),
+            $file->allFiles(base_path().'/provider/assets/js/compat')
         ),
 
         /**
