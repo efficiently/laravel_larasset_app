@@ -18,12 +18,12 @@ require __DIR__.'/../vendor/autoload.php';
 
 // For dev tests
 // $autoloader = require __DIR__.'/../vendor/autoload.php';
-// $autoloader->addPsr4('Illuminate\\Html\\', '/home/tom/Applications/jquery-laravel/vendor/illuminate/html');
-// require "/home/tom/Applications/jquery-laravel/vendor/illuminate/html/helpers.php";
-// $autoloader->add('Efficiently\\JqueryLaravel\\', '/home/tom/Applications/jquery-laravel/src');
-// require "/home/tom/Applications/jquery-laravel/src/Efficiently/JqueryLaravel/helpers.php";
-// $autoloader->add('Efficiently\\Larasset\\', '/home/tom/Applications/larasset/src');
-// require "/home/tom/Applications/larasset/src/Efficiently/Larasset/helpers.php";
+// $autoloader->addPsr4('Illuminate\\Html\\', __DIR__.'/../../jquery-laravel/vendor/illuminate/html');
+// require __DIR__."/../../jquery-laravel/vendor/illuminate/html/helpers.php";
+// $autoloader->add('Efficiently\\JqueryLaravel\\', __DIR__.'/../../jquery-laravel/src');
+// require __DIR__."/../../jquery-laravel/src/Efficiently/JqueryLaravel/helpers.php";
+// $autoloader->add('Efficiently\\Larasset\\', __DIR__.'/../../larasset/src');
+// require __DIR__."/../../larasset/src/Efficiently/Larasset/helpers.php";
 
 /*
 |--------------------------------------------------------------------------
