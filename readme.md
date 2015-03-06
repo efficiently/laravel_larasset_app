@@ -1,9 +1,9 @@
-Init Laravel with [Larasset](https://github.com/efficiently/larasset) demo application
+Init Laravel with [Larasset](https://github.com/efficiently/larasset/tree/1.0) demo application
 ===========================================
 
-[![Build Status](https://travis-ci.org/efficiently/laravel_larasset_app.svg?branch=master)](https://travis-ci.org/efficiently/laravel_larasset_app)
+[![Build Status](https://travis-ci.org/efficiently/laravel_larasset_app.svg?branch=1.0)](https://travis-ci.org/efficiently/laravel_larasset_app)
 
-This demo will show you how to give to your Laravel application some Ajax requests quickly and easily!
+This demo will show you how to give to your Laravel 5 application some Ajax requests quickly and easily!
 
 Prerequisites
 -------------
@@ -19,8 +19,8 @@ Installation
 1. Get a copy of this demo on your computer
 
   ```sh
-  git clone https://github.com/efficiently/laravel_larasset_app.git
-  cd laravel_larasset_app/
+  git clone https://github.com/efficiently/laravel_larasset_app.git --branch 1.0
+  cd laravel_larasset_app
   composer install
   ```
 
