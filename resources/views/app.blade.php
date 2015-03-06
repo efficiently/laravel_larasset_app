@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laravel</title>
-
-	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-
-	<!-- Fonts -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-	{!! javascript_include_tag('app') !!}
 	{!! csrf_meta_tags() !!}
+
+	<title>Laravel and Larasset Quickstart</title>
+
+  {!! stylesheet_link_tag('app') !!}
+  <!--[if IE 8]>
+    {!! javascript_include_tag('compat/respond') !!}
+  <![endif]-->
+  <!--[if lte IE 8]>
+    {{-- Le HTML5 shim, for IE6-8 support of HTML elements --}}
+    {!! javascript_include_tag('compat/html5shiv') !!}
+    {{-- IE 8 native JSON.parse function is sometimes buggy. E.g. when using a reviver function. Source: http://stackoverflow.com/a/9212073 --}}
+    <script type="text/javascript">
+      if (typeof JSON !== 'undefined') { JSON.parse = null; }
+    </script>
+    {!! javascript_include_tag('compat/json2') !!}
+    {!! javascript_include_tag('compat/es5.array.reduce') !!}
+  <![endif]-->
+
+  {{-- Size should be 32 x 32 pixels --}}
+  {{-- favicon_link_tag('favicon.ico', ['rel' => 'shortcut icon') --}}
+	{!! javascript_include_tag('app') !!}
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -30,12 +37,12 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Laravel</a>
+				<a class="navbar-brand" href="{{ url('/') }}">Larasset demo</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">Home</a></li>
+					<li><a href="{{ route('messages.index') }}">Messages</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -55,9 +62,18 @@
 		</div>
 	</nav>
 
-	@yield('content')
+	<div class="container">
+    {{-- check for flash notification messages --}}
+		@foreach (['info', 'success', 'warning', 'danger'] as $level)
+			<?php $sessionLevel = $level === 'danger' ? 'error' : $level; // 'danger' means 'error' for Bootstrap ?>
+			{!! Alert::{$level}(Session::get($sessionLevel))->withAttributes(['data-alert' => 'alert', 'class' => (Session::has($sessionLevel)) ? 'fade in' : 'fade in hidden'])->close() !!}
+			<?php Session::forget($sessionLevel); ?>
+    @endforeach
 
-	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <section id="content">
+      @yield('content')
+    </section>{{-- /content --}}
+  </div>{{-- /container --}}
+
 </body>
 </html>

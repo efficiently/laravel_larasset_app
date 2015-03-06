@@ -59,6 +59,7 @@ return [
                 base_path().'/provider/assets/images',
                 base_path().'/provider/assets/js',
                 base_path().'/provider/assets/css',
+                base_path().'/provider/assets/fonts',
                 // base_path().'/provider/videoplayer/flash',
             ]
         ),
@@ -73,12 +74,11 @@ return [
          * If you have other manifests or individual stylesheets and JavaScript files
          * to include, you can add them to this precompile array.
          */
-        'precompile' => [
-            'app.css',
-            'app.js',
-            // 'admin.js',
-            // 'admin.css',
-        ],
+        'precompile' => array_merge(
+            ['app.css', 'app.js'],
+            with(new Illuminate\Filesystem\Filesystem)->allFiles(base_path().'/provider/assets/fonts'),
+            with(new Illuminate\Filesystem\Filesystem)->allFiles(base_path().'/provider/assets/js/compat')
+        ),
 
         /**
          * Enable or disable Source Mapping.

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use Input;
+use Validator;
 use App\Message;
 
 class MessagesController extends Controller {
@@ -53,10 +54,10 @@ class MessagesController extends Controller {
      */
     public function store()
     {
-        $message = app('App\Message');
-        $message->fill(Input::except('_method', '_token'));
+        $inputs = Input::except('_method', '_token');
+        $validator = Validator::make($inputs, Message::$rules);
 
-        if ($message->save()) {
+        if ($validator->passes() && $message = Message::create($inputs)) {
             $format = \Request::format();
 
             switch ($format) {
@@ -74,7 +75,8 @@ class MessagesController extends Controller {
             return $render;
         }
 
-        return redirect()->route('home')->with('message', "Error: Unable to save this message");
+        return redirect()->route('messages.create')->withInput()
+            ->with('error', "Error: Unable to save this message");
     }
 
 
@@ -124,9 +126,12 @@ class MessagesController extends Controller {
     public function update($id)
     {
         $message = Message::findOrFail($id);
-        $message->fill(Input::except('_method', '_token'));
-        if ($message->save()) {
+        $inputs = Input::except('_method', '_token');
+        $validator = Validator::make($inputs, Message::$rules);
+
+        if ($validator->passes() && $message->update($inputs)) {
             $format = \Request::format();
+
             switch ($format) {
                 case 'js':
                     // Just renders messages/update_js.blade.php
@@ -138,9 +143,12 @@ class MessagesController extends Controller {
                     $render = redirect()->route('messages.show', $message->id);
                     break;
             }
+
             return $render;
         }
-        return redirect()->route('home')->with('message', "Error: Unable to save this message");
+
+        return redirect()->route('messages.edit', $message->id)->withInput()
+            ->with('error', "Error: Unable to save this message");
     }
 
 
@@ -168,7 +176,8 @@ class MessagesController extends Controller {
             }
             return $render;
         }
-        return redirect()->route('home')->with('message', "Error: Unable to delete this message");
+
+        return redirect()->route('messages.show', $message->id)->with('error', "Error: Unable to remove this message");
     }
 
 }

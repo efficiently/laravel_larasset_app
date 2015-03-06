@@ -1,14 +1,36 @@
-@div_for($message)
-    <p>
-        <strong>Title:</strong>
+@div_for($message, null, ['class' => 'row'])
+  <div class="col-lg-10 col-md-8 col-sm-6">
+    <dl class="dl-horizontal">
+      <dt>Title</dt>
+      <dd>
         {{ $message->title }}
-    </p>
-    <p>
-        <strong>Body:</strong>
+      </dd>
+
+      <dt>Body</dt>
+      <dd>
         {!! nl2br(e($message->body)) !!}
-    </p>
+      </dd>
+    </dl>
+  </div>
+  <div class="col-lg-2 col-md-3">
     <div class="actions">
-        {!! link_to(route('messages.edit', $message->id), 'edit', ['data-remote' => true]) !!}
-        {!! link_to(route('messages.destroy', $message->id), 'remove', ['data-method' => 'delete', 'data-confirm' => "Are you sure?", 'data-remote' => true]) !!}
+      {!!
+        Button::normal('edit')->asLinkTo(route('messages.edit', $message->id))->withAttributes([
+          'data-remote' => true,
+        ])->prependIcon(Icon::pencil())
+      !!}
+
+      {!!
+        button_to(Icon::trash_o().' remove', [
+          'route' => ['messages.destroy', $message->id],
+          'method' => 'delete',
+          'data-remote' => true,
+          'data-confirm' => "Are you sure?",
+          'data-disable-with' => 'removing...',
+          'formClass' => 'button-to-inline',
+          'class' => 'btn-danger btn',
+        ])
+      !!}
     </div>
+  </div>
 @end_div_for

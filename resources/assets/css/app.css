@@ -10,5 +10,7 @@
  * but before any files alphabetically greater than 'app.css'
  *
  *= require_self
+ *= require fontawesome
+ *= require bootstrap
  *= require_tree .
  */
