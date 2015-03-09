@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "db60ea54158219e0bbffdbe323b75cfb",
+    "hash": "1fb697a0d50590f5b480e525253be22d",
     "packages": [
         {
             "name": "anahkiasen/former",
@@ -103,6 +103,55 @@
             ],
             "description": "A set of classes to create and manipulate HTML objects abstractions",
             "time": "2015-03-04 17:12:08"
+        },
+        {
+            "name": "barryvdh/laravel-stack-middleware",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-stack-middleware.git",
+                "reference": "40b2917fdb62a46a3352ccc927e9c8e9016a5cbe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/laravel-stack-middleware/zipball/40b2917fdb62a46a3352ccc927e9c8e9016a5cbe",
+                "reference": "40b2917fdb62a46a3352ccc927e9c8e9016a5cbe",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.0.x",
+                "php": ">=5.4.0",
+                "symfony/http-kernel": "~2.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Barryvdh\\StackMiddleware\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "Stack Middleware for Laravel 5",
+            "keywords": [
+                "StackPHP",
+                "laravel",
+                "middleware",
+                "stack"
+            ],
+            "time": "2015-02-18 08:01:48"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -380,12 +429,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/efficiently/larasset.git",
-                "reference": "a352ddd06427e2bc85e2403ae4c634a5ddef6a21"
+                "reference": "42cf2d6b051d6dee03b94c48c0363e3b6852ff76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efficiently/larasset/zipball/a352ddd06427e2bc85e2403ae4c634a5ddef6a21",
-                "reference": "a352ddd06427e2bc85e2403ae4c634a5ddef6a21",
+                "url": "https://api.github.com/repos/efficiently/larasset/zipball/42cf2d6b051d6dee03b94c48c0363e3b6852ff76",
+                "reference": "42cf2d6b051d6dee03b94c48c0363e3b6852ff76",
                 "shasum": ""
             },
             "require": {
@@ -440,7 +489,115 @@
                 "sourcemaps",
                 "versioning"
             ],
-            "time": "2015-03-06 15:30:10"
+            "time": "2015-03-09 08:44:42"
+        },
+        {
+            "name": "efficiently/turbolinks",
+            "version": "1.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/efficiently/turbolinks.git",
+                "reference": "fa2bac6b88d564bb639022546e59c74372d669c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/efficiently/turbolinks/zipball/fa2bac6b88d564bb639022546e59c74372d669c7",
+                "reference": "fa2bac6b88d564bb639022546e59c74372d669c7",
+                "shasum": ""
+            },
+            "require": {
+                "barryvdh/laravel-stack-middleware": "~0.2.0",
+                "helthe/turbolinks": "~1.4",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Efficiently\\Turbolinks\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Studio Frénétic",
+                    "email": "info@studiofrenetic.com"
+                },
+                {
+                    "name": "Tortue Torche",
+                    "email": "tortuetorche@spam.me"
+                }
+            ],
+            "description": "Turbolinks makes following links in your web application faster with Laravel 5.0",
+            "keywords": [
+                "ajax",
+                "asset",
+                "javascript",
+                "jquery",
+                "jquery.turbolinks",
+                "larasset",
+                "laravel",
+                "laravel 5",
+                "pjax",
+                "turbolinks"
+            ],
+            "time": "2015-03-09 16:26:21"
+        },
+        {
+            "name": "helthe/turbolinks",
+            "version": "1.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helthe/Turbolinks.git",
+                "reference": "aea314ebb3116074ddcdd948ca349fc6deef269e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helthe/Turbolinks/zipball/aea314ebb3116074ddcdd948ca349fc6deef269e",
+                "reference": "aea314ebb3116074ddcdd948ca349fc6deef269e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/http-foundation": "~2.3"
+            },
+            "require-dev": {
+                "symfony/http-kernel": "~2.3"
+            },
+            "suggest": {
+                "symfony/http-kernel": "Required for usage with the Symfony HttpKernel Component"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Helthe\\Component\\Turbolinks\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carl Alexander",
+                    "email": "carlalexander@helthe.co"
+                }
+            ],
+            "description": "Helthe Turbolinks Component",
+            "homepage": "https://helthe.co",
+            "keywords": [
+                "jquery.turbolinks",
+                "turbolinks"
+            ],
+            "time": "2014-12-10 14:32:54"
         },
         {
             "name": "illuminate/html",
@@ -676,16 +833,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.0.13",
+            "version": "v5.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "c263240daa383e6b9bd979600dc61dcb2c436d53"
+                "reference": "f61e0098151c73db9068a6be6d86bfc60b01de25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/c263240daa383e6b9bd979600dc61dcb2c436d53",
-                "reference": "c263240daa383e6b9bd979600dc61dcb2c436d53",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/f61e0098151c73db9068a6be6d86bfc60b01de25",
+                "reference": "f61e0098151c73db9068a6be6d86bfc60b01de25",
                 "shasum": ""
             },
             "require": {
@@ -797,7 +954,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-02-27 00:32:38"
+            "time": "2015-03-07 03:18:10"
         },
         {
             "name": "league/flysystem",
