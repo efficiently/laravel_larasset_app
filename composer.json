@@ -5,11 +5,11 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "5.0.*",
+		"laravel/framework": "~5.0.17",
 		"anahkiasen/former": "~4.0.0",
 		"patricktalmadge/bootstrapper": "~5.5.3",
 		"efficiently/larasset": "1.0.*",
-		"efficiently/turbolinks": "~1.0.0"
+		"frenzy/turbolinks": "dev-master"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

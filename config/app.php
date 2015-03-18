@@ -139,7 +139,7 @@ return [
 		'Illuminate\Html\HtmlServiceProvider',
 		'Efficiently\Larasset\LarassetServiceProvider',
 		'Efficiently\JqueryLaravel\JqueryLaravelServiceProvider',
-		'Efficiently\Turbolinks\TurbolinksServiceProvider',
+		'Frenzy\Turbolinks\TurbolinksServiceProvider',
 		'Former\FormerServiceProvider',
 		'Bootstrapper\BootstrapperL5ServiceProvider',
 
