@@ -125,7 +125,7 @@ return array(
         'Bootstrapper\BootstrapperServiceProvider',
         'Efficiently\Larasset\LarassetServiceProvider',
         'Efficiently\JqueryLaravel\JqueryLaravelServiceProvider',
-        'Efficiently\Turbolinks\TurbolinksServiceProvider',
+        'Frenzy\Turbolinks\TurbolinksServiceProvider',
 
     ),
 
