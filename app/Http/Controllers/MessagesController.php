@@ -2,16 +2,14 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
-
 use Input;
 use Validator;
 use App\Message;
 
-class MessagesController extends Controller {
-
-	/**
+class MessagesController extends Controller
+{
+    /**
      * Display a listing of the resource.
      *
      * @return Response
@@ -179,5 +177,4 @@ class MessagesController extends Controller {
 
         return redirect()->route('messages.show', $message->id)->with('error', "Error: Unable to remove this message");
     }
-
 }
