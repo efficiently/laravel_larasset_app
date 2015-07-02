@@ -5,13 +5,13 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "5.0.*",
+		"laravel/framework": "~5.1.2",
 		"efficiently/larasset": "1.0.*"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
 		"phpspec/phpspec": "~2.1",
-		"codeception/codeception": "~2.0.11"
+		"codeception/codeception": "~2.1.0"
 	},
 	"autoload": {
 		"classmap": [
