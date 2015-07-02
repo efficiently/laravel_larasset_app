@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1acafcf32eb431f9b0983c0adba59332",
+    "hash": "3ae77c190e4441c7e4ab5b0ef0dc2b23",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -272,21 +272,21 @@
         },
         {
             "name": "efficiently/larasset",
-            "version": "1.0.x-dev",
+            "version": "1.1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/efficiently/larasset.git",
-                "reference": "f45fe6ca98ead6199b62ad4581a0cec65cfd15e1"
+                "reference": "f8ea38fc2bcfaab57743c532b69413fa31154a32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efficiently/larasset/zipball/f45fe6ca98ead6199b62ad4581a0cec65cfd15e1",
-                "reference": "f45fe6ca98ead6199b62ad4581a0cec65cfd15e1",
+                "url": "https://api.github.com/repos/efficiently/larasset/zipball/f8ea38fc2bcfaab57743c532b69413fa31154a32",
+                "reference": "f8ea38fc2bcfaab57743c532b69413fa31154a32",
                 "shasum": ""
             },
             "require": {
                 "efficiently/jquery-laravel": "~2.0.0",
-                "illuminate/html": "~5.0",
+                "laravelcollective/html": "5.0.4||5.1.*",
                 "php": ">=5.4.0"
             },
             "require-dev": {
@@ -315,6 +315,7 @@
             ],
             "description": "Larasset is a library for Laravel 5 which manage assets in an easy way.",
             "keywords": [
+                "Laravel 5.1",
                 "Sprockets",
                 "asset-pipeline",
                 "assets",
@@ -336,7 +337,7 @@
                 "sourcemaps",
                 "versioning"
             ],
-            "time": "2015-05-22 09:05:02"
+            "time": "2015-07-02 10:52:30"
         },
         {
             "name": "illuminate/html",
@@ -656,6 +657,56 @@
                 "laravel"
             ],
             "time": "2015-07-02 02:28:22"
+        },
+        {
+            "name": "laravelcollective/html",
+            "version": "v5.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "0918dac79ff8d294a92048f2d8b3c0c3078139b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/0918dac79ff8d294a92048f2d8b3c0c3078139b0",
+                "reference": "0918dac79ff8d294a92048f2d8b3c0c3078139b0",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "5.1.*",
+                "illuminate/routing": "5.1.*",
+                "illuminate/session": "5.1.*",
+                "illuminate/support": "5.1.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                }
+            ],
+            "time": "2015-06-18 02:16:50"
         },
         {
             "name": "league/flysystem",
