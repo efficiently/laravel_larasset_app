@@ -426,12 +426,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/efficiently/larasset.git",
-                "reference": "f8ea38fc2bcfaab57743c532b69413fa31154a32"
+                "reference": "ee8bc07d2de68c2ab7d4c66ce3c78e4a62f08a92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efficiently/larasset/zipball/f8ea38fc2bcfaab57743c532b69413fa31154a32",
-                "reference": "f8ea38fc2bcfaab57743c532b69413fa31154a32",
+                "url": "https://api.github.com/repos/efficiently/larasset/zipball/ee8bc07d2de68c2ab7d4c66ce3c78e4a62f08a92",
+                "reference": "ee8bc07d2de68c2ab7d4c66ce3c78e4a62f08a92",
                 "shasum": ""
             },
             "require": {
@@ -487,7 +487,7 @@
                 "sourcemaps",
                 "versioning"
             ],
-            "time": "2015-07-02 10:52:30"
+            "time": "2015-07-02 15:50:36"
         },
         {
             "name": "frenzy/turbolinks",
