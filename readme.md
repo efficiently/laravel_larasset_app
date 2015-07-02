@@ -1,4 +1,4 @@
-Init Laravel with [Larasset](https://github.com/efficiently/larasset/tree/1.0) demo application
+Init Laravel with [Larasset](https://github.com/efficiently/larasset/tree/1.1) demo application
 ===========================================
 
 [![Build Status](https://travis-ci.org/efficiently/laravel_larasset_app.svg?branch=bootstrap-l5.1)](https://travis-ci.org/efficiently/laravel_larasset_app)
