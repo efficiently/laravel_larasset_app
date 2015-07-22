@@ -372,12 +372,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/efficiently/jquery-laravel.git",
-                "reference": "f1f8ef284f27882fa2d36e93125f520fbda927e2"
+                "reference": "b6e1513da09ea931b3f50ee245ef4c0d69ad3043"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efficiently/jquery-laravel/zipball/f1f8ef284f27882fa2d36e93125f520fbda927e2",
-                "reference": "f1f8ef284f27882fa2d36e93125f520fbda927e2",
+                "url": "https://api.github.com/repos/efficiently/jquery-laravel/zipball/b6e1513da09ea931b3f50ee245ef4c0d69ad3043",
+                "reference": "b6e1513da09ea931b3f50ee245ef4c0d69ad3043",
                 "shasum": ""
             },
             "require": {
@@ -424,7 +424,7 @@
                 "ujs",
                 "unobtrusive"
             ],
-            "time": "2015-07-09 13:50:48"
+            "time": "2015-07-22 12:05:31"
         },
         {
             "name": "efficiently/larasset",
