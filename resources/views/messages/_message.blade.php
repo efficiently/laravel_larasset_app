@@ -1,4 +1,4 @@
-@div_for($message, null, ['class' => 'row'])
+@div_for($message, 'edit', ['class' => 'row'])
   <div class="col-lg-10 col-md-8 col-sm-6">
     <dl class="dl-horizontal">
       <dt>Title</dt>

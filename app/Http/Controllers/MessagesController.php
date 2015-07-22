@@ -1,11 +1,13 @@
-<?php namespace App\Http\Controllers;
+<?php
+
+namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use App\Message;
+use Former;
 use Illuminate\Http\Request;
 use Input;
 use Validator;
-use App\Message;
 
 class MessagesController extends Controller
 {
@@ -21,7 +23,6 @@ class MessagesController extends Controller
         return $this->render('messages.index', compact('messages'));
     }
 
-
     /**
      * Show the form for creating a new resource.
      *
@@ -30,20 +31,15 @@ class MessagesController extends Controller
     public function create()
     {
         $message = app('App\Message');
-        $format = \Request::format();
-        switch ($format) {
-            case 'js':
-                $render = $this->render(['js' => 'messages.create'], compact('message'));
-                break;
-            case 'html':
-            default:
-                // No js fallback
-                $render = $this->render('messages.create', compact('message'));
-                break;
-        }
+
+        $render = $this->render(
+            'messages.create',
+            compact('message'),
+            ['change' => 'create_message']
+        );
+
         return $render;
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -52,31 +48,28 @@ class MessagesController extends Controller
      */
     public function store()
     {
-        $inputs = Input::except('_method', '_token');
-        $validator = Validator::make($inputs, Message::$rules);
+        $params = Input::except('_method', '_token');
+        $validator = Validator::make($params, Message::$rules);
 
-        if ($validator->passes() && $message = Message::create($inputs)) {
-            $format = \Request::format();
-
-            switch ($format) {
-                case 'js':
-                    // Just renders messages/store_js.blade.php
-                    $render = $this->render(['js' => 'messages.store'], ['message' => $message]);
-                    break;
-                case 'html':
-                default:
-                    // No js fallback
-                    $render = redirect()->route('messages.show', $message->id);
-                    break;
-            }
+        if ($validator->passes() && $message = Message::create($params)) {
+            $render = $this->redirectTo(
+                route('messages.index'),
+                ['change' => 'messages']
+            )->with('success', "Message was successfully created.");
 
             return $render;
         }
 
-        return redirect()->route('messages.create')->withInput()
-            ->with('error', "Error: Unable to save this message");
-    }
+        $message = app('App\Message');
+        session()->flash('error', "Error: Unable to save this message");
+        Former::withErrors($validator);
 
+        return $this->render(
+            'messages.create',
+            compact('message'),
+            ['change' => 'create_message']
+        );
+    }
 
     /**
      * Display the specified resource.
@@ -100,20 +93,14 @@ class MessagesController extends Controller
     public function edit($id)
     {
         $message = Message::findOrFail($id);
-        $format = \Request::format();
-        switch ($format) {
-            case 'js':
-                $render = $this->render(['js' => 'messages.edit'], compact('message'));
-                break;
-            case 'html':
-            default:
-                // No js fallback
-                $render = $this->render('messages.edit', compact('message'));
-                break;
-        }
+        $render = $this->render(
+            'messages.edit',
+            compact('message'),
+            ['change' => form_id($message)]
+        );
+
         return $render;
     }
-
 
     /**
      * Update the specified resource in storage.
@@ -124,29 +111,26 @@ class MessagesController extends Controller
     public function update($id)
     {
         $message = Message::findOrFail($id);
-        $inputs = Input::except('_method', '_token');
-        $validator = Validator::make($inputs, Message::$rules);
+        $params = Input::except('_method', '_token');
+        $validator = Validator::make($params, Message::$rules);
 
-        if ($validator->passes() && $message->update($inputs)) {
-            $format = \Request::format();
-
-            switch ($format) {
-                case 'js':
-                    // Just renders messages/update_js.blade.php
-                    $render = $this->render(['js' => 'messages.update'], ['message' => $message]);
-                    break;
-                case 'html':
-                default:
-                    // No js fallback
-                    $render = redirect()->route('messages.show', $message->id);
-                    break;
-            }
+        if ($validator->passes() && $message->update($params)) {
+            $render = $this->redirectTo(
+                route('messages.index'),
+                ['change' => 'messages']
+            )->with('success', "Message was successfully updated.");
 
             return $render;
         }
 
-        return redirect()->route('messages.edit', $message->id)->withInput()
-            ->with('error', "Error: Unable to save this message");
+        session()->flash('error', "Error: Unable to save this message");
+        Former::withErrors($validator);
+
+        return $this->render(
+            'messages.edit',
+            compact('message'),
+            ['change' => form_id($message)]
+        );
     }
 
 
@@ -160,21 +144,16 @@ class MessagesController extends Controller
     {
         $message = Message::findOrFail($id);
         if ($message->delete()) {
-            $format = \Request::format();
-            switch ($format) {
-                case 'js':
-                    // Just renders messages/destroy_js.blade.php
-                    $render = $this->render(['js' => 'messages.destroy'], compact('message'));
-                    break;
-                case 'html':
-                default:
-                    // No js fallback
-                    $render = redirect()->route('messages.index');
-                    break;
-            }
+            $render = $this->redirectTo(
+                route('messages.index'),
+                ['change' => 'messages']
+            );
             return $render;
         }
 
-        return redirect()->route('messages.show', $message->id)->with('error', "Error: Unable to remove this message");
+        return $this->redirectTo(
+            route('messages.index'),
+            ['change' => 'messages']
+        )->with('error', "Error: Unable to remove this message");
     }
 }

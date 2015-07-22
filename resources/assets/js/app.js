@@ -19,7 +19,5 @@
 //= require turbolinks
 
 if (typeof Turbolinks !== 'undefined' && Turbolinks) {
-  if (typeof Turbolinks.enableProgressBar === 'function') {
-    Turbolinks.enableProgressBar();
-  }
+  Turbolinks.enableTransitionCache();
 }

@@ -28,7 +28,7 @@
 	{!! javascript_include_tag('app', ['data-turbolinks-track' => true]) !!}
 </head>
 <body>
-	<nav class="navbar navbar-default">
+	<nav id='navbar_top' class="navbar navbar-default" data-turbolinks-permanent>
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -51,7 +51,9 @@
 						<li><a href="{{ url('/auth/register') }}">Register</a></li>
 					@else
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+								{{ Auth::user()->name }} <span class="caret"></span>
+							</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
 							</ul>
@@ -63,12 +65,19 @@
 	</nav>
 
 	<div class="container">
-    {{-- check for flash notification messages --}}
-		@foreach (['info', 'success', 'warning', 'danger'] as $level)
-			<?php $sessionLevel = $level === 'danger' ? 'error' : $level; // 'danger' means 'error' for Bootstrap ?>
-			{!! Alert::{$level}(Session::get($sessionLevel))->withAttributes(['data-alert' => 'alert', 'class' => (Session::has($sessionLevel)) ? 'fade in' : 'fade in hidden'])->close() !!}
-			<?php Session::forget($sessionLevel); ?>
-    @endforeach
+		<div id="flash" data-turbolinks-temporary>
+	    {{-- check for flash notification messages --}}
+			@foreach (['info', 'success', 'warning', 'danger'] as $level)
+				<?php $sessionLevel = $level === 'danger' ? 'error' : $level; // 'danger' means 'error' for Bootstrap ?>
+				{!!
+						Alert::{$level}(Session::get($sessionLevel))->withAttributes([
+							'data-alert' => 'alert',
+							'class' => (Session::has($sessionLevel)) ? 'fade in' : 'fade in hidden'
+						])->close()
+				!!}
+				<?php Session::forget($sessionLevel); ?>
+	    @endforeach
+		</div>
 
     <section id="content">
       @yield('content')
