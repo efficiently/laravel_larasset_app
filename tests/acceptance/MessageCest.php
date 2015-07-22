@@ -32,8 +32,8 @@ class MessageCest
         $I->fillField(['css' => '#create_message [name=title]'], 'Automatic title '.$id);
         $I->fillField(['css' => '#create_message [name=body]'], 'Automatic body '.$id);
         $I->click('Send message', '#create_message');
-        $I->seeCurrentUrlEquals('/messages/'.$id);
-        $I->see('Automatic title '.$id, '#message_'.$id);
+        $I->seeCurrentUrlEquals('/messages');
+        $I->see('Automatic title '.$id, '#edit_message_'.$id);
     }
 
     /**
@@ -55,8 +55,8 @@ class MessageCest
         $I->fillField(['css' => '#create_message [name=body]'], 'Automatic body '.$id);
         $I->click('Send message', '#create_message');
 
-        $I->seeCurrentUrlEquals('/messages');//UJS
-        $I->see('Automatic title '.$id, '#message_'.$id);
+        $I->seeCurrentUrlEquals('/messages');// Turbolinks
+        $I->see('Automatic title '.$id, '#edit_message_'.$id);
     }
 
     /**
@@ -73,16 +73,20 @@ class MessageCest
         $I->amOnPage('/messages');
         $I->see('All messages');
 
-        $I->click('edit', '#message_'.$id);
+        $I->click('edit', '#edit_message_'.$id);
         $I->seeInField('title', 'Automatic title '.$id);
         $I->seeInField('body', 'Automatic body '.$id);
         $I->fillField(['css' => "#edit_message_$id [name=title]"], 'Edited title '.$id);
         $I->fillField(['css' => "#edit_message_$id [name=body]"], 'Edited body '.$id);
         $I->click('Send message', '#edit_message_'.$id);
 
-        $I->seeCurrentUrlEquals('/messages');//UJS
-        $I->see('Edited title '.$id, '#message_'.$id);
-        $I->see('Edited body '.$id, '#message_'.$id);
+        $I->seeCurrentUrlEquals('/messages');// Turbolinks
+
+        // Wait for Turbolinks response is finished
+        $I->waitForElementVisible('div#edit_message_'.$id, 1);
+
+        $I->see('Edited title '.$id, '#edit_message_'.$id);
+        $I->see('Edited body '.$id, '#edit_message_'.$id);
     }
 
     /**
@@ -98,17 +102,16 @@ class MessageCest
         $I->wantTo('destroy a message');
         $I->amOnPage('/messages');
         $I->see('All messages');
-        $I->see('Edited title '.$id, '#message_'.$id);
+        $I->see('Edited title '.$id, '#edit_message_'.$id);
 
-        $this->alwaysAcceptPopup($I);//UJS
+        $this->alwaysAcceptPopup($I);// UJS
 
-        $I->click('remove', '#message_'.$id);
+        $I->click('remove', '#edit_message_'.$id);
         // $I->acceptPopup();// Not compatible with PhantomJS
 
-        // Wait for all jQuery ajax requests are finished
-        $I->waitForJS("return jQuery.active == 0;", 2);//UJS
+        // Wait for Turbolinks response is finished
+        $I->waitForElementNotVisible('#edit_message_'.$id, 1);
 
-        // $I->dontSeeElement('#message_'.$id); // Too slow, weird ...
         $I->dontSee('Edited title '.$id);
     }
 
@@ -126,9 +129,9 @@ class MessageCest
     protected function alwaysAcceptPopup(AcceptanceTester $I)
     {
         // Accept Popup
-        $I->executeJS("window.alert = function(msg){};");//JS
+        $I->executeJS("window.alert = function(msg){};");// JS
 
         // Confirm Popup
-        $I->executeJS("window.confirm = function(msg){return true;};");//JS
+        $I->executeJS("window.confirm = function(msg){return true;};");// JS
     }
 }
