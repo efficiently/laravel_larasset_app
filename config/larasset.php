@@ -84,8 +84,8 @@ return [
          */
         'precompile' => array_merge(
             ['app.css', 'app.js'],
-            $file->allFiles(base_path().'/provider/assets/fonts'),
-            $file->allFiles(base_path().'/provider/assets/js/compat')
+            array_map(function ($path) { return (string) $path; }, $file->allFiles(base_path().'/provider/assets/fonts')),
+            array_map(function ($path) { return (string) $path; }, $file->allFiles(base_path().'/provider/assets/js/compat'))
         ),
 
         /**
