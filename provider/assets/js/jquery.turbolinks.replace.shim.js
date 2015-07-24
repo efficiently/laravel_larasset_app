@@ -8,7 +8,7 @@
     if (!Turbolinks.supported) {
       var CSRFToken = {
         get: function(doc) {
-          if (doc == null) {
+          if (!doc) {
             doc = document;
           }
           var tag = $(doc).find('meta[name="csrf-token"]');
@@ -30,15 +30,34 @@
         update: function(latest) {
           var current = this.get();
           // console.log('Update CSRF Token!');//debug
-          if ((current.token != null) && (latest != null) && current.token !== latest) {
-            return current.node.attr('content', latest);
+          if ((current.token) && (latest) && current.token !== latest) {
+            current.node.attr('content', latest);
           }
         },
-        // making sure that all forms have actual up-to-date token(cached forms contain old one)
-        refresh: function() {
-          // console.log('Refresh Tokens!');//debug
+        // Making sure that all forms have actual up-to-date token(cached forms contain old one)
+        // TODO: Some Server-side frameworks like Laravel need this.
+        // If your application doesn't use `jquery.turbolinks` library,
+        // You should add this on every `page:load` event.
+        // Even if Turbolinks is supported by the browser.
+        refreshForms: function() {
+          // console.log('Refresh Forms tokens!');//debug
           var current = this.get();
           $('form input[name="' + current.param + '"]').val(current.token);
+        },
+        // Make sure that every Ajax request sends the CSRF token
+        // TODO: If your application doesn't use jQuery UJS but it send jQuery AJAX requests.
+        // You should add this on every `page:load` event.
+        // Even if Turbolinks is supported by the browser.
+        setupAjaxHeader: function() {
+          $.ajaxPrefilter(function(options, originalOptions, xhr) {
+            if (!options.crossDomain) {
+              var current = CSRFToken.get();
+              if (current.token) {
+                // console.log('Refresh X-CSRF-Token' + current.token);//debug
+                xhr.setRequestHeader('X-CSRF-Token', current.token);
+              }
+            }
+          });
         }
       };
       Turbolinks.replaceContent = function(content, options) {
@@ -81,6 +100,7 @@
             currentBody = $('body');
             if (content.csrfToken) {
               CSRFToken.update(content.csrfToken);
+              CSRFToken.setupAjaxHeader();
             }
             currentBody.trigger('page:load');
           } else {
@@ -109,19 +129,12 @@
             currentBody = $('body');
             if (content.csrfToken) {
               CSRFToken.update(content.csrfToken);
+              CSRFToken.setupAjaxHeader();
             }
             currentBody.trigger('page:load');
           }
 
-          //test
-          $.ajaxPrefilter(function(options, originalOptions, xhr) {
-            if (!options.crossDomain && $.rails) {
-              // console.log('Refresh X-CSRF-Token');//debug
-              $.rails.CSRFProtection(xhr);// TODO: port this Rails UJS method
-            }
-          });
-
-          CSRFToken.refresh();
+          CSRFToken.refreshForms();
 
           return true;// TODO: Reflect the Turbolinks.defaultReplace() return behaviour
         } else {
