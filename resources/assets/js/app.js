@@ -20,5 +20,7 @@
 //= require jquery.turbolinks.replace.shim
 
 if (typeof Turbolinks !== 'undefined' && Turbolinks) {
+  // You remove the line below if your application response time is slow
+  Turbolinks.ProgressBar.disable();
   Turbolinks.enableTransitionCache();
 }
