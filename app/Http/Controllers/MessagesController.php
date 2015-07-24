@@ -32,13 +32,11 @@ class MessagesController extends Controller
     {
         $message = app('App\Message');
 
-        $render = $this->render(
+        return $this->render(
             'messages.create',
             compact('message'),
             ['change' => 'create_message']
         );
-
-        return $render;
     }
 
     /**
@@ -52,12 +50,8 @@ class MessagesController extends Controller
         $validator = Validator::make($params, Message::$rules);
 
         if ($validator->passes() && $message = Message::create($params)) {
-            $render = $this->redirectTo(
-                route('messages.index'),
-                ['change' => 'messages']
-            )->with('success', "Message was successfully created.");
-
-            return $render;
+            session()->flash('success', "Message was successfully created.");
+            return $this->loadAndRenderIndex();
         }
 
         $message = app('App\Message');
@@ -93,13 +87,12 @@ class MessagesController extends Controller
     public function edit($id)
     {
         $message = Message::findOrFail($id);
-        $render = $this->render(
+
+        return $this->render(
             'messages.edit',
             compact('message'),
             ['change' => form_id($message)]
         );
-
-        return $render;
     }
 
     /**
@@ -115,12 +108,8 @@ class MessagesController extends Controller
         $validator = Validator::make($params, Message::$rules);
 
         if ($validator->passes() && $message->update($params)) {
-            $render = $this->redirectTo(
-                route('messages.index'),
-                ['change' => 'messages']
-            )->with('success', "Message was successfully updated.");
-
-            return $render;
+            session()->flash('success', "Message was successfully updated.");
+            return $this->loadAndRenderIndex();
         }
 
         session()->flash('error', "Error: Unable to save this message");
@@ -144,16 +133,23 @@ class MessagesController extends Controller
     {
         $message = Message::findOrFail($id);
         if ($message->delete()) {
-            $render = $this->redirectTo(
-                route('messages.index'),
-                ['change' => 'messages']
-            );
-            return $render;
+            return $this->loadAndRenderIndex();
         }
 
         return $this->redirectTo(
             route('messages.index'),
             ['change' => 'messages']
         )->with('error', "Error: Unable to remove this message");
+    }
+
+    protected function loadAndRenderIndex()
+    {
+        $messages = Message::all();
+
+        return $this->render(
+            'messages.index',
+            compact('messages'),
+            ['change' => 'messages']
+        );
     }
 }
