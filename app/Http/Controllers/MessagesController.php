@@ -109,7 +109,12 @@ class MessagesController extends Controller
 
         if ($validator->passes() && $message->update($params)) {
             session()->flash('success', "Message was successfully updated.");
-            return $this->loadAndRenderIndex();
+
+            return $this->render(
+                'messages.show',
+                compact('message'),
+                ['change' => form_id($message)]
+            );
         }
 
         session()->flash('error', "Error: Unable to save this message");
