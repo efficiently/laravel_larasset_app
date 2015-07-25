@@ -1,8 +1,8 @@
+// jQuery Turbolinks Replace Shim
 // Experimental IE 8 and 9 compatibility for the `replace()` method of Turbolinks 3
 // TODO: Port executeScriptTags(), onNodeRemoved() ?
 // WIP: CSRF protection
 // See: https://github.com/rails/turbolinks/issues/526
-
 (function($) {
   if (typeof Turbolinks !== 'undefined' && Turbolinks) {
     if (!Turbolinks.supported) {
@@ -87,7 +87,7 @@
               }
               var targetNode = $('#' + nodeId, body);
               if (targetNode.length) {
-                targetNode = targetNode.clone(true);
+                targetNode = targetNode.get(0).cloneNode(true);
                 $(existingNode).replaceWith(targetNode);
                 changedNodes.push(targetNode);
               }
@@ -121,7 +121,7 @@
               }
               var targetNode = $('#' + nodeId, body);
               if (targetNode.length) {
-                $(targetNode).replaceWith($(existingNode).clone(true));
+                $(targetNode).replaceWith(existingNode.cloneNode(true));
               }
             });
 
