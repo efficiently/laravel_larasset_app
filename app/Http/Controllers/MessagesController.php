@@ -138,7 +138,20 @@ class MessagesController extends Controller
     {
         $message = Message::findOrFail($id);
         if ($message->delete()) {
-            return $this->loadAndRenderIndex();
+            $format = \Request::format();
+            switch ($format) {
+                case 'js':
+                    // UJS rendering: Just renders messages/destroy_js.blade.php
+                    $render = $this->render(['js' => 'messages.destroy'], compact('message'));
+                    break;
+                case 'html':
+                default:
+                    // Turbolinks fallback:
+                    $render = $this->loadAndRenderIndex();
+                    break;
+            }
+
+            return $render;
         }
 
         return $this->redirectTo(
