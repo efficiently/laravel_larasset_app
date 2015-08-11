@@ -14,7 +14,6 @@ modules:
         WebDriver:
             url: 'http://localhost:8000'
             browser: 'firefox'
-            wait: 2
 env:
     php:
         modules:

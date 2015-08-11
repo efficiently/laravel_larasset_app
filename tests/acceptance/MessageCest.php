@@ -51,9 +51,14 @@ class MessageCest
         $I->see('All messages');
 
         $I->click('Add a message');
+
+        $I->waitForElementVisible('form#create_message', 1);
+
         $I->fillField(['css' => '#create_message [name=title]'], 'Automatic title '.$id);
         $I->fillField(['css' => '#create_message [name=body]'], 'Automatic body '.$id);
         $I->click('Send message', '#create_message');
+
+        $I->waitForElementNotVisible('form#create_message', 1);
 
         $I->seeCurrentUrlEquals('/messages');// Turbolinks
         $I->see('Automatic title '.$id, '#edit_message_'.$id);
@@ -74,11 +79,16 @@ class MessageCest
         $I->see('All messages');
 
         $I->click('edit', '#edit_message_'.$id);
+
+        $I->waitForElementVisible('form#edit_message_'.$id, 1);
+
         $I->seeInField('title', 'Automatic title '.$id);
         $I->seeInField('body', 'Automatic body '.$id);
         $I->fillField(['css' => "#edit_message_$id [name=title]"], 'Edited title '.$id);
         $I->fillField(['css' => "#edit_message_$id [name=body]"], 'Edited body '.$id);
         $I->click('Send message', '#edit_message_'.$id);
+
+        $I->waitForElementNotVisible('form#edit_message_'.$id, 1);
 
         $I->seeCurrentUrlEquals('/messages');// Turbolinks
 
