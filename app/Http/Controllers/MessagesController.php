@@ -91,7 +91,7 @@ class MessagesController extends Controller
         return $this->render(
             'messages.edit',
             compact('message'),
-            ['change' => form_id($message)]
+            ['change' => dom_id($message)]
         );
     }
 
@@ -113,7 +113,7 @@ class MessagesController extends Controller
             return $this->render(
                 'messages.show',
                 compact('message'),
-                ['change' => form_id($message)]
+                ['change' => dom_id($message)]
             );
         }
 
@@ -123,7 +123,7 @@ class MessagesController extends Controller
         return $this->render(
             'messages.edit',
             compact('message'),
-            ['change' => form_id($message)]
+            ['change' => dom_id($message)]
         );
     }
 

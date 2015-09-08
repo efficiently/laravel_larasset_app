@@ -1,4 +1,4 @@
-{!! former_for($message, ['class' => 'row', 'data-remote' => true])->populate($message) !!}
+{!! former_for($message, ['id' => dom_id($message), 'class' => 'row', 'data-remote' => true])->populate($message) !!}
   <div class="col-md-8 well">
       {!! Former::text('title') !!}
 
