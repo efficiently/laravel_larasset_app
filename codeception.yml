@@ -14,6 +14,3 @@ modules:
             dsn: 'sqlite:storage/testing.sqlite'
             user: ''
             password: ''
-            dump: tests/_data/dump.sql
-            populate: true
-            cleanup: false
