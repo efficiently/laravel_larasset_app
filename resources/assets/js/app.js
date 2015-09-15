@@ -16,9 +16,4 @@
 //= require jquery_ujs
 //= require bootstrap_ujs
 //= require_tree .
-//= require turbolinks
-//= require jquery.turbolinks.replace.shim
-
-if (typeof Turbolinks !== 'undefined' && Turbolinks) {
-  Turbolinks.enableTransitionCache();
-}
+//= require turbolinks_custom
