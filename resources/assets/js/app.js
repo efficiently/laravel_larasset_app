@@ -17,3 +17,4 @@
 //= require bootstrap_ujs
 //= require_tree .
 //= require turbolinks_custom
+//= require laravel_csrf_protection
