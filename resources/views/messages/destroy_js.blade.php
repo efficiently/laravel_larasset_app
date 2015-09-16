@@ -1,6 +1,6 @@
 // <script type="text/javascript"> {{-- Keep this line to have syntax highlight in IDE --}}
 
 $('#{{ dom_id($message) }}').remove();
-$("#flash .alert").addClass('hidden');
+Turbolinks.replace({!! json_encode(render_view('_flash')) !!}, {change: 'flash'});
 
 // </script>{{-- Keep this line to have syntax highlight in IDE --}}
