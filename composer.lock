@@ -1,23 +1,24 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "be948ec87f77533a4777c6db5cbee304",
+    "hash": "5e0ef6fb7093fe5ec111640c91493403",
+    "content-hash": "9656eb5efecb1ff3568bfbbf936cb129",
     "packages": [
         {
             "name": "anahkiasen/former",
-            "version": "4.0.x-dev",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/formers/former.git",
-                "reference": "a2fbec9d29cf820d54dfa6f0ddb875339d77e930"
+                "reference": "d00f6cb25a65d335468473e3a785471892549c72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/formers/former/zipball/a2fbec9d29cf820d54dfa6f0ddb875339d77e930",
-                "reference": "a2fbec9d29cf820d54dfa6f0ddb875339d77e930",
+                "url": "https://api.github.com/repos/formers/former/zipball/d00f6cb25a65d335468473e3a785471892549c72",
+                "reference": "d00f6cb25a65d335468473e3a785471892549c72",
                 "shasum": ""
             },
             "require": {
@@ -63,7 +64,7 @@
                 "foundation",
                 "laravel"
             ],
-            "time": "2015-06-01 18:46:46"
+            "time": "2015-09-15 17:50:02"
         },
         {
             "name": "anahkiasen/html-object",
@@ -372,12 +373,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/efficiently/jquery-laravel.git",
-                "reference": "b6e1513da09ea931b3f50ee245ef4c0d69ad3043"
+                "reference": "8aece279b589b554fcf1e968b43e7bb66d4f1443"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/efficiently/jquery-laravel/zipball/b6e1513da09ea931b3f50ee245ef4c0d69ad3043",
-                "reference": "b6e1513da09ea931b3f50ee245ef4c0d69ad3043",
+                "url": "https://api.github.com/repos/efficiently/jquery-laravel/zipball/8aece279b589b554fcf1e968b43e7bb66d4f1443",
+                "reference": "8aece279b589b554fcf1e968b43e7bb66d4f1443",
                 "shasum": ""
             },
             "require": {
@@ -424,7 +425,7 @@
                 "ujs",
                 "unobtrusive"
             ],
-            "time": "2015-07-22 12:05:31"
+            "time": "2015-09-17 14:09:46"
         },
         {
             "name": "efficiently/larasset",
@@ -800,16 +801,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.1.16",
+            "version": "v5.1.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "e34dcc0c57e0f560248aec5128161256ff8bf4e1"
+                "reference": "415b5d824e15ee7cd18b8b23f96ae32b0b51d6a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/e34dcc0c57e0f560248aec5128161256ff8bf4e1",
-                "reference": "e34dcc0c57e0f560248aec5128161256ff8bf4e1",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/415b5d824e15ee7cd18b8b23f96ae32b0b51d6a0",
+                "reference": "415b5d824e15ee7cd18b8b23f96ae32b0b51d6a0",
                 "shasum": ""
             },
             "require": {
@@ -924,7 +925,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-09-04 12:46:14"
+            "time": "2015-09-16 16:57:12"
         },
         {
             "name": "laravelcollective/html",
@@ -2295,12 +2296,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Codeception.git",
-                "reference": "093c09509f1661be53b16b4ef0fce56502ceba8e"
+                "reference": "e7981b45b99077d57ca2cbe923052a31b0e56a15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/093c09509f1661be53b16b4ef0fce56502ceba8e",
-                "reference": "093c09509f1661be53b16b4ef0fce56502ceba8e",
+                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/e7981b45b99077d57ca2cbe923052a31b0e56a15",
+                "reference": "e7981b45b99077d57ca2cbe923052a31b0e56a15",
                 "shasum": ""
             },
             "require": {
@@ -2367,7 +2368,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2015-09-14 09:35:27"
+            "time": "2015-09-14 19:43:34"
         },
         {
             "name": "doctrine/instantiator",
@@ -3212,16 +3213,16 @@
         },
         {
             "name": "phpunit/php-token-stream",
-            "version": "1.4.6",
+            "version": "1.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "3ab72c62e550370a6cd5dc873e1a04ab57562f5b"
+                "reference": "3144ae21711fb6cac0b1ab4cbe63b75ce3d4e8da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/3ab72c62e550370a6cd5dc873e1a04ab57562f5b",
-                "reference": "3ab72c62e550370a6cd5dc873e1a04ab57562f5b",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/3144ae21711fb6cac0b1ab4cbe63b75ce3d4e8da",
+                "reference": "3144ae21711fb6cac0b1ab4cbe63b75ce3d4e8da",
                 "shasum": ""
             },
             "require": {
@@ -3257,7 +3258,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2015-08-16 08:51:00"
+            "time": "2015-09-15 10:49:45"
         },
         {
             "name": "phpunit/phpunit",
@@ -3919,6 +3920,8 @@
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=5.5.9"
+    },
     "platform-dev": []
 }
