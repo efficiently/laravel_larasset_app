@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => 'sqlite',
+    'default' => env('DB_CONNECTION', 'sqlite'),
 
     /*
     |--------------------------------------------------------------------------
@@ -48,7 +48,7 @@ return [
 
         'sqlite' => [
             'driver'   => 'sqlite',
-            'database' => storage_path().'/'.env('APP_ENV', 'local').'.sqlite',
+            'database' => database_path().'/'.env('APP_ENV', 'local').'.sqlite',
             'prefix'   => '',
         ],
 
@@ -81,6 +81,7 @@ return [
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
+            'charset'  => 'utf8',
             'prefix'   => '',
         ],
 
