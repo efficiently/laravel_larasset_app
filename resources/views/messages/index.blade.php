@@ -6,7 +6,8 @@
       @include('messages._message')
     @endforeach
 
-  <div id="create_message">
-    @include('messages._create_link')
+    <div id="create_message">
+      @include('messages._create_link')
+    </div>
   </div>
 @stop
