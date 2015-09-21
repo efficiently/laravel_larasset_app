@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5e0ef6fb7093fe5ec111640c91493403",
+    "hash": "a4ab921c489d64edb4692ee376d77459",
     "content-hash": "9656eb5efecb1ff3568bfbbf936cb129",
     "packages": [
         {
@@ -559,12 +559,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/tortuetorche/Turbolinks.git",
-                "reference": "b9ca5d8dd560510380ed9f13df1f3697516ae806"
+                "reference": "4427bae7e03389d420ab8db9e06dbc1f44c2e1fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tortuetorche/Turbolinks/zipball/b9ca5d8dd560510380ed9f13df1f3697516ae806",
-                "reference": "b9ca5d8dd560510380ed9f13df1f3697516ae806",
+                "url": "https://api.github.com/repos/tortuetorche/Turbolinks/zipball/4427bae7e03389d420ab8db9e06dbc1f44c2e1fa",
+                "reference": "4427bae7e03389d420ab8db9e06dbc1f44c2e1fa",
                 "shasum": ""
             },
             "require": {
@@ -606,7 +606,7 @@
             "support": {
                 "source": "https://github.com/tortuetorche/Turbolinks/tree/turbo3"
             },
-            "time": "2015-09-14 14:42:12"
+            "time": "2015-09-21 14:32:00"
         },
         {
             "name": "illuminate/html",
@@ -979,20 +979,23 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.12",
+            "version": "1.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "7323424a9d39c24e597ed3f2144419dfbb52e086"
+                "reference": "76caed01a57527599b55919f0746104f288b3d56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/7323424a9d39c24e597ed3f2144419dfbb52e086",
-                "reference": "7323424a9d39c24e597ed3f2144419dfbb52e086",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/76caed01a57527599b55919f0746104f288b3d56",
+                "reference": "76caed01a57527599b55919f0746104f288b3d56",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0"
+            },
+            "conflict": {
+                "league/flysystem-sftp": "<1.0.6"
             },
             "require-dev": {
                 "ext-fileinfo": "*",
@@ -1056,7 +1059,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2015-09-05 12:06:41"
+            "time": "2015-09-20 13:05:34"
         },
         {
             "name": "monolog/monolog",
@@ -1227,16 +1230,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v1.4.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "196f177cfefa0f1f7166c0a05d8255889be12418"
+                "reference": "f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/196f177cfefa0f1f7166c0a05d8255889be12418",
-                "reference": "196f177cfefa0f1f7166c0a05d8255889be12418",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51",
+                "reference": "f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51",
                 "shasum": ""
             },
             "require": {
@@ -1268,7 +1271,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2015-07-14 17:31:05"
+            "time": "2015-09-19 14:15:08"
         },
         {
             "name": "patricktalmadge/bootstrapper",
@@ -2296,12 +2299,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Codeception.git",
-                "reference": "e7981b45b99077d57ca2cbe923052a31b0e56a15"
+                "reference": "d1e2d567788bd3d2d97e0f7f6352faa21356d262"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/e7981b45b99077d57ca2cbe923052a31b0e56a15",
-                "reference": "e7981b45b99077d57ca2cbe923052a31b0e56a15",
+                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/d1e2d567788bd3d2d97e0f7f6352faa21356d262",
+                "reference": "d1e2d567788bd3d2d97e0f7f6352faa21356d262",
                 "shasum": ""
             },
             "require": {
@@ -2368,7 +2371,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2015-09-14 19:43:34"
+            "time": "2015-09-18 21:01:19"
         },
         {
             "name": "doctrine/instantiator",
@@ -3262,16 +3265,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.7",
+            "version": "4.8.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "dab2ada9e9a503d2ec3c32fe0fb59dea9bdd9dfa"
+                "reference": "521720279261e5b14799cf1bb895d4b55e516f26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/dab2ada9e9a503d2ec3c32fe0fb59dea9bdd9dfa",
-                "reference": "dab2ada9e9a503d2ec3c32fe0fb59dea9bdd9dfa",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/521720279261e5b14799cf1bb895d4b55e516f26",
+                "reference": "521720279261e5b14799cf1bb895d4b55e516f26",
                 "shasum": ""
             },
             "require": {
@@ -3330,7 +3333,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-09-14 06:57:22"
+            "time": "2015-09-19 05:44:37"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
