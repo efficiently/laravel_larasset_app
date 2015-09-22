@@ -1,0 +1,25 @@
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+$fa-font-path: "#{$base-asset-url}";
+$fa-font-name: 'fontawesome-webfont';
+$fa-css-prefix: glyphicon; // Bootstrap use Glyphicons by default
+
+$fa-font-eot-path: asset_path("#{$fa-font-path}#{$fa-font-name}.eot");
+$fa-font-eot-path-iefix: asset_path("#{$fa-font-path}#{$fa-font-name}.eot");
+$fa-font-woff-path: asset_path("#{$fa-font-path}#{$fa-font-name}.woff");
+$fa-font-woff2-path: asset_path("#{$fa-font-path}#{$fa-font-name}.woff2");
+$fa-font-ttf-path: asset_path("#{$fa-font-path}#{$fa-font-name}.ttf");
+$fa-font-svg-path: asset_path("#{$fa-font-path}#{$fa-font-name}.svg");
+$fa-font-otf-path: url("#{$fa-font-path}/FontAwesome.otf");
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("#{$fa-font-eot-path}?v=#{$fa-version}");
+  src: url("#{$fa-font-eot-path-iefix}?#iefix&v=#{$fa-version}") format('embedded-opentype'),
+    url("#{$fa-font-woff-path}?v=#{$fa-version}") format('woff'),
+    url("#{$fa-font-woff2-path}?v=#{$fa-version}") format('woff2'),
+    url("#{$fa-font-ttf-path}?v=#{$fa-version}") format('truetype'),
+    url("#{$fa-font-svg-path}?v=#{$fa-version}#fontawesomeregular") format('svg');
+//  src: $fa-font-otf-path format('opentype'); // used when developing fonts
+  font-weight: normal;
+  font-style: normal;
+}

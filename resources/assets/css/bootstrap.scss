@@ -1,0 +1,24 @@
+@import 'bootstrap-custom'; // Bootstrap with theme and without Glyphicons
+
+// body {
+//   padding-top: 80px; // 60px to make the container go all the way to the bottom of the topbar
+// }
+
+// Your custom SCSS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://getbootstrap.com/customize/#less-variables for their names and documentation
+//
+// Example:
+// $link-color: #ff0000;
+
+.button-to-inline {
+  display: inline;
+
+  > div {
+    display: inline;
+  }
+}
