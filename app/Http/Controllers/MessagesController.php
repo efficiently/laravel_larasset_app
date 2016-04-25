@@ -1,16 +1,13 @@
-<?php namespace App\Http\Controllers;
+<?php
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
-use Illuminate\Http\Request;
+namespace App\Http\Controllers;
 
 use Input;
 use App\Message;
 
-class MessagesController extends Controller {
-
-	/**
+class MessagesController extends Controller
+{
+    /**
      * Display a listing of the resource.
      *
      * @return Response
@@ -21,7 +18,6 @@ class MessagesController extends Controller {
 
         return $this->render('messages.index', compact('messages'));
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -42,9 +38,9 @@ class MessagesController extends Controller {
                 $render = $this->render('messages.create', compact('message'));
                 break;
         }
+
         return $render;
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -74,14 +70,14 @@ class MessagesController extends Controller {
             return $render;
         }
 
-        return redirect()->route('home')->with('message', "Error: Unable to save this message");
+        return redirect()->route('home')->with('message', 'Error: Unable to save this message');
     }
-
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return Response
      */
     public function show($id)
@@ -94,7 +90,8 @@ class MessagesController extends Controller {
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return Response
      */
     public function edit($id)
@@ -111,14 +108,15 @@ class MessagesController extends Controller {
                 $render = $this->render('messages.edit', compact('message'));
                 break;
         }
+
         return $render;
     }
-
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return Response
      */
     public function update($id)
@@ -138,16 +136,18 @@ class MessagesController extends Controller {
                     $render = redirect()->route('messages.show', $message->id);
                     break;
             }
+
             return $render;
         }
-        return redirect()->route('home')->with('message', "Error: Unable to save this message");
-    }
 
+        return redirect()->route('home')->with('message', 'Error: Unable to save this message');
+    }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return Response
      */
     public function destroy($id)
@@ -166,9 +166,10 @@ class MessagesController extends Controller {
                     $render = redirect()->route('messages.index');
                     break;
             }
+
             return $render;
         }
-        return redirect()->route('home')->with('message', "Error: Unable to delete this message");
-    }
 
+        return redirect()->route('home')->with('message', 'Error: Unable to delete this message');
+    }
 }

@@ -1,7 +1,5 @@
 <?php
 
-use \AcceptanceTester;
-
 class MessageCest
 {
     protected $id;
@@ -19,7 +17,6 @@ class MessageCest
 
     /**
      * @env php
-     *
      */
     public function addMessage(AcceptanceTester $I)
     {
@@ -41,7 +38,6 @@ class MessageCest
      * @env firefox
      * @env ie
      * @env phantom
-     *
      */
     public function addMessageWithJS(AcceptanceTester $I)
     {
@@ -64,7 +60,6 @@ class MessageCest
      * @env firefox
      * @env ie
      * @env phantom
-     *
      */
     public function editMessage(AcceptanceTester $I)
     {
@@ -90,7 +85,6 @@ class MessageCest
      * @env firefox
      * @env ie
      * @env phantom
-     *
      */
     public function destroyMessage(AcceptanceTester $I)
     {
@@ -117,7 +111,7 @@ class MessageCest
     /**
      * Always accept JavaScript popup.
      * Workaround to `$I->acceptPopup();`
-     * Because this method doesn't work with PhantomJS
+     * Because this method doesn't work with PhantomJS.
      *
      * Source: https://github.com/detro/ghostdriver/issues/20#issuecomment-44032604
      *
@@ -126,9 +120,9 @@ class MessageCest
     protected function alwaysAcceptPopup(AcceptanceTester $I)
     {
         // Accept Popup
-        $I->executeJS("window.alert = function(msg){};");//JS
+        $I->executeJS('window.alert = function(msg){};');//JS
 
         // Confirm Popup
-        $I->executeJS("window.confirm = function(msg){return true;};");//JS
+        $I->executeJS('window.confirm = function(msg){return true;};');//JS
     }
 }

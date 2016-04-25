@@ -2,7 +2,7 @@
 
 return [
 
-        /**
+        /*
          * Changing the assets Path
          *
          * The public path that Larasset uses by default is /assets.
@@ -13,7 +13,7 @@ return [
          */
         'prefix' => '/assets',
 
-        /**
+        /*
          * By default, Larasset links to these assets on the current host
          * in the public folder, but you can direct Larasset to link to assets
          * from a dedicated asset server by setting `larasset.host`
@@ -37,7 +37,7 @@ return [
          */
         'host' => null,
 
-        /**
+        /*
          * Search Paths
          *
          * When a file is referenced from a manifest or a helper,
@@ -63,7 +63,7 @@ return [
             ]
         ),
 
-        /**
+        /*
          * Precompile files
          *
          * The default matcher for compiling files includes app.js, app.css
@@ -80,7 +80,7 @@ return [
             // 'admin.css',
         ],
 
-        /**
+        /*
          * Enable or disable Source Mapping.
          * Useful in development environment to debug precompiled files.
          * Source-maps files shouldn't be published on a public web server.
