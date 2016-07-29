@@ -11,12 +11,12 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         'Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode',
-        'Illuminate\Cookie\Middleware\EncryptCookies',
+        \App\Http\Middleware\EncryptCookies::class,
         'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
         'Illuminate\Session\Middleware\StartSession',
         'Illuminate\View\Middleware\ShareErrorsFromSession',
         'App\Http\Middleware\VerifyCsrfToken',
-        'Efficiently\JqueryLaravel\VerifyJavascriptResponse',
+        'App\Http\Middleware\VerifyJavascriptResponse',
         'Frenzy\Turbolinks\Middleware\StackTurbolinks'
     ];
 

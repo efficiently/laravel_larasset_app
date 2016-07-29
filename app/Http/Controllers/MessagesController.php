@@ -66,14 +66,14 @@ class MessagesController extends Controller
                 case 'html':
                 default:
                     // No js fallback
-                    $render = redirect()->route('messages.show', $message->id);
+                    $render = $this->redirectTo(route('messages.show', $message->id));
                     break;
             }
 
             return $render;
         }
 
-        return redirect()->route('messages.create')->withInput()
+        return $this->redirectTo(route('messages.create'))->withInput()
             ->with('error', "Error: Unable to save this message");
     }
 
@@ -138,14 +138,14 @@ class MessagesController extends Controller
                 case 'html':
                 default:
                     // No js fallback
-                    $render = redirect()->route('messages.show', $message->id);
+                    $render = $this->redirectTo(route('messages.show', $message->id));
                     break;
             }
 
             return $render;
         }
 
-        return redirect()->route('messages.edit', $message->id)->withInput()
+        return $this->redirectTo(route('messages.edit', $message->id))->withInput()
             ->with('error', "Error: Unable to save this message");
     }
 
@@ -169,12 +169,12 @@ class MessagesController extends Controller
                 case 'html':
                 default:
                     // No js fallback
-                    $render = redirect()->route('messages.index');
+                    $render = $this->redirectTo(route('messages.index'));
                     break;
             }
             return $render;
         }
 
-        return redirect()->route('messages.show', $message->id)->with('error', "Error: Unable to remove this message");
+        return $this->redirectTo(route('messages.show', $message->id))->with('error', "Error: Unable to remove this message");
     }
 }

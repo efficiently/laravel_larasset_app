@@ -8,24 +8,24 @@
 
 	<title>Laravel and Larasset Quickstart</title>
 
-	{!! stylesheet_link_tag('app', ['data-turbolinks-track' => true]) !!}
+	{!! stylesheet_link_tag('app', ['data-turbolinks-track' => 'reload']) !!}
 	<!--[if IE 8]>
-	{!! javascript_include_tag('compat/respond', ['data-turbolinks-track' => true]) !!}
+	{!! javascript_include_tag('compat/respond', ['data-turbolinks-track' => 'reload']) !!}
 	<![endif]-->
 	<!--[if lte IE 8]>
 	{{-- Le HTML5 shim, for IE6-8 support of HTML elements --}}
-	{!! javascript_include_tag('compat/html5shiv', ['data-turbolinks-track' => true]) !!}
+	{!! javascript_include_tag('compat/html5shiv', ['data-turbolinks-track' => 'reload']) !!}
 	{{-- IE 8 native JSON.parse function is sometimes buggy. E.g. when using a reviver function. Source: http://stackoverflow.com/a/9212073 --}}
 	<script type="text/javascript">
 	  if (typeof JSON !== 'undefined') { JSON.parse = null; }
 	</script>
-	{!! javascript_include_tag('compat/json2', ['data-turbolinks-track' => true]) !!}
-	{!! javascript_include_tag('compat/es5.array.reduce', ['data-turbolinks-track' => true]) !!}
+	{!! javascript_include_tag('compat/json2', ['data-turbolinks-track' => 'reload']) !!}
+	{!! javascript_include_tag('compat/es5.array.reduce', ['data-turbolinks-track' => 'reload']) !!}
 	<![endif]-->
 
 	{{-- Size should be 32 x 32 pixels --}}
-	{{-- favicon_link_tag('favicon.ico', ['rel' => 'shortcut icon', 'data-turbolinks-track' => true) --}}
-	{!! javascript_include_tag('app', ['data-turbolinks-track' => true]) !!}
+	{{-- favicon_link_tag('favicon.ico', ['rel' => 'shortcut icon', 'data-turbolinks-track' => 'reload') --}}
+	{!! javascript_include_tag('app', ['data-turbolinks-track' => 'reload']) !!}
 </head>
 <body>
 	<nav class="navbar navbar-default">

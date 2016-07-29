@@ -12,14 +12,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap_ujs
 //= require_tree .
 //= require turbolinks
-
-if (typeof Turbolinks !== 'undefined' && Turbolinks) {
-  if (typeof Turbolinks.enableProgressBar === 'function') {
-    Turbolinks.enableProgressBar();
-  }
-}
+//= require laravel_csrf_protection
