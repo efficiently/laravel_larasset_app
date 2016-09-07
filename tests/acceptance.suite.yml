@@ -1,0 +1,63 @@
+# Codeception Test Suite Configuration
+#
+# Suite for acceptance tests.
+# Perform tests in browser using the WebDriver or PhpBrowser.
+# If you need both WebDriver and PHPBrowser tests - create a separate suite.
+
+class_name: AcceptanceTester
+modules:
+    enabled:
+        - \Helper\Acceptance
+        - Db
+env:
+    php:
+        modules:
+            enabled:
+                - PhpBrowser
+            config:
+                PhpBrowser:
+                    url: 'http://localhost:8000'
+                    proxy: ''
+
+    phantom:
+        modules:
+            enabled:
+                - WebDriver
+            config:
+                WebDriver:
+                    url: 'http://localhost:8000'
+                    browser: 'phantomjs'
+                    wait: 2
+                    capabilities:
+                        webStorageEnabled: true
+    chrome:
+         modules:
+            enabled:
+                - WebDriver
+            config:
+                WebDriver:
+                    url: 'http://localhost:8000'
+                    browser: 'chrome'
+                    wait: 2
+    ie:
+        modules:
+            enabled:
+              - WebDriver
+            config:
+                WebDriver:
+                    url: 'http://localhost:8000'
+                    browser: 'internetexplorer'
+                    wait: 2
+                    capabilities:
+                        # IE 10+ only. Source: http://stackoverflow.com/a/21138992
+                        # requireWindowFocus: true
+                        # nativeEvents: false
+    firefox:
+        modules:
+            enabled:
+              - WebDriver
+            config:
+                WebDriver:
+                    url: 'http://localhost:8000'
+                    browser: 'firefox'
+                    wait: 2

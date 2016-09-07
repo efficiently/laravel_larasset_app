@@ -1,20 +1,16 @@
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * include Vue and Vue Resource. This gives a great starting point for
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-require('./bootstrap');
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the body of the page. From here, you may begin adding components to
- * the application, or feel free to tweak this setup for your needs.
- */
-
-Vue.component('example', require('./components/Example.vue'));
-
-const app = new Vue({
-    el: 'body'
-});
+// This is a manifest file that'll be compiled into app.js, which will include all the files
+// listed below.
+//
+// Any JavaScript/Coffee file within this directory, lib/assets/js, provider/assets/js,
+// or provider/assets/js of packages, if any, can be referenced here using a relative path.
+//
+// It's not advisable to add code directly here, but if you do, it'll appear in whatever order it
+// gets included (e.g. say you have require_tree . then the code will appear after all the directories
+// but before any files alphabetically greater than 'app.js'
+//
+// Read Mincer README (https://github.com/nodeca/mincer#mincer-directives) for details
+// about supported directives.
+//
+//= require jquery
+//= require jquery_ujs
+//= require_tree .

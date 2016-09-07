@@ -10,4 +10,10 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    use \Efficiently\JqueryLaravel\ControllerAdditions;
+
+    /**
+     * The layout that should be used for responses.
+     */
+    protected $layout = 'layouts.app';
 }

@@ -1,0 +1,21 @@
+language: php
+
+php:
+  - 5.6
+  - 7.0
+
+matrix:
+  allow_failures:
+    - php: 7.0
+
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - wget http://selenium-release.storage.googleapis.com/2.43/selenium-server-standalone-2.43.1.jar
+  - java -jar selenium-server-standalone-2.43.1.jar -port 4444 &
+  - composer self-update
+  - composer install --prefer-source --no-interaction --dev
+  - npm install -g larasset-js
+  - chmod +x ./ci_script
+
+script: ./ci_script
