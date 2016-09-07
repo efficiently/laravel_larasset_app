@@ -1,27 +1,41 @@
-# Laravel PHP Framework
+Init Laravel with [Larasset](https://github.com/efficiently/larasset/tree/1.3) demo application
+===========================================
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+[![Build Status](https://travis-ci.org/efficiently/laravel_larasset_app.svg?branch=1.3)](https://travis-ci.org/efficiently/laravel_larasset_app)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+This demo will show you how to give to your Laravel 5.3 application some Ajax requests quickly and easily!
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Prerequisites
+-------------
 
-## Official Documentation
+You must [install Node.js](http://nodejs.org) on your computer <small>(development environment only)</small>.
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Laravel 5.3 is **only** compatible with **PHP >= 5.6**.
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Installation
+------------
 
-## Security Vulnerabilities
+1. Get a copy of this demo on your computer
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+  ```sh
+  git clone https://github.com/efficiently/laravel_larasset_app.git --branch 1.3
+  cd laravel_larasset_app
+  composer install
+  ```
 
-## License
+2. Install the Node.js module of this package
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+  ```sh
+  npm install -g larasset-js
+  ```
+
+3. Run your Laravel application and the assets servers
+
+  ```sh
+  php artisan server
+  ```
+
+  Then open this URL in your Web browser: [http://localhost:8000/messages](http://localhost:8000/messages)
+
+  You can read how this demo was build [HERE](https://github.com/efficiently/larasset/wiki/Server-generated-JavaScript-Responses).
