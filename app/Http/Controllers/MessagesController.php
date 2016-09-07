@@ -25,7 +25,7 @@ class MessagesController extends Controller
      */
     public function create()
     {
-        $message = app('App\Message');
+        $message = new Message;
         $format = request()->format();
         switch ($format) {
             case 'js':
@@ -48,10 +48,10 @@ class MessagesController extends Controller
      */
     public function store()
     {
-        $message = app('App\Message');
-        $message->fill(request()->except('_method', '_token'));
+        $message = new Message(request()->except('_method', '_token'));
 
-        if ($message->save()) {
+        try {
+            $message->save();
             $format = request()->format();
 
             switch ($format) {
@@ -65,11 +65,10 @@ class MessagesController extends Controller
                     $render = redirect()->route('messages.show', $message->id);
                     break;
             }
-
             return $render;
+        } catch (Exception $e) {
+            return redirect()->route('home')->with('message', 'Error: Unable to save this message');
         }
-
-        return redirect()->route('home')->with('message', 'Error: Unable to save this message');
     }
 
     /**
@@ -122,7 +121,8 @@ class MessagesController extends Controller
     {
         $message = Message::findOrFail($id);
         $message->fill(request()->except('_method', '_token'));
-        if ($message->save()) {
+        try {
+            $message->save();
             $format = request()->format();
             switch ($format) {
                 case 'js':
@@ -137,9 +137,9 @@ class MessagesController extends Controller
             }
 
             return $render;
+        } catch (Exception $e) {
+            return redirect()->route('home')->with('message', 'Error: Unable to save this message');
         }
-
-        return redirect()->route('home')->with('message', 'Error: Unable to save this message');
     }
 
     /**
@@ -152,7 +152,8 @@ class MessagesController extends Controller
     public function destroy($id)
     {
         $message = Message::findOrFail($id);
-        if ($message->delete()) {
+        try {
+            $message->delete();
             $format = request()->format();
             switch ($format) {
                 case 'js':
@@ -167,8 +168,8 @@ class MessagesController extends Controller
             }
 
             return $render;
+        } catch (Exception $e) {
+            return redirect()->route('home')->with('message', 'Error: Unable to delete this message');
         }
-
-        return redirect()->route('home')->with('message', 'Error: Unable to delete this message');
     }
 }
